@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+	
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style type="text/css">
+		body{
+			background-color: white;
+		}
+		.branner{
+			width: 100%;
+			height: 3.4rem;
+		}
+		.swiper-container {
+		    width: 100%;
+		    height: 100%;
+		}
+		.swiper-container img{
+			width: 100%;
+			height: 3.4rem;
+		}
+		.search{
+			width:7.5rem;
+			height:1.07rem;
+			background:rgba(244,244,244,1);
+			overflow: hidden;
+		}
+		.searchMain{
+			width:6.95rem;
+			height:0.71rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.1rem;
+			margin: 0 auto;
+			margin-top: 0.18rem;
+			position: relative;
+		}
+		.searchMain img{
+			width: 0.36rem;
+			height: 0.33rem;
+			position: absolute;
+			left: 0.21rem;
+			top: 50%;
+			margin-top: -0.165rem;
+		}
+		.searchMain input{
+			margin-top: 0.07rem;
+			margin-left: 0.8rem;
+			color:rgba(205,205,205,1);
+		}
+		.iconTop{
+			width: 7.5rem;
+			margin-top: 0.3rem;
+		}
+		.nav_item {
+		    /* height: 1.9rem; */
+		   	width: 1.875rem;
+		    overflow: hidden;
+	        display: inline-block;
+		}
+		.item_img {
+		    width: 100%;
+		    height: 0.82rem;
+		}
+		.item_img img {
+		    width: 0.9rem !important;
+		}
+		.item_title {
+		    width: 100%;
+		    /* height: 1rem; */
+		    text-align: center;
+		    /* line-height: 0.8rem; */
+		    margin-top: 0.26rem;
+		    font-size:0.22rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+		}
+		.windTop,.ipTop,.newShelfTop,.hotTop{
+			width: 100%;
+			height: 0.5rem;
+			margin-top: 0.24rem;
+		}
+		.windTopTitle,.ipTopTitle,.newShelfTopTitle,.hotTopTitle{
+			width:3.5rem;
+			height: 0.5rem;
+			line-height: 0.5rem;
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-left: 0.28rem;
+			float: left;
+		}
+		.windTopAll{
+		    height: 0.5rem;
+		    float: right;
+		    line-height: 0.53rem;
+		    font-family: PingFangSC-Regular;
+		    font-weight: 400;
+		    font-size: 0.25rem;
+		    padding-right: 0.2rem;
+		}
+		.windTopAllText{
+		    padding-right: 0.1rem;
+		    font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1)
+		}
+		.all-right {
+		    width: 0.13rem;
+		    height: 0.21rem;
+		    float: right;
+		}
+		.all-right img {
+		    width: 0.13rem;
+		    height: 0.21rem;
+		}
+		.windBottom{
+			width: 7.5rem;
+			height: 2.9rem;
+			margin-top: 0.18rem;
+		}
+		.windShopp{
+			width: 2rem;
+			height: 2.9rem;
+			margin-left: 0.18rem;
+			display: inline-block;
+		}
+		.windShoppImg{
+			width: 2rem;
+			height: 2rem;
+			border-radius:0.1rem;
+			overflow: hidden;
+		}
+		.windShoppImg img{
+			width: 2rem;
+			height: 2rem;
+		}
+		.windShoppTitle{
+			width: 2rem;
+			margin-top: 0.14rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			text-align: left;
+		}
+		.windShoppPrice{
+			margin-top: 0.06rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			text-align: left;
+		}
+		.ip{
+			margin-top: 0.24rem;
+		}
+		.ip1{
+			width:3.4rem;
+			height:3.3rem;
+			border-radius:0.09rem;
+			overflow: hidden;
+			float: left;
+			margin-top: 0.18rem;
+			margin-left: 0.28rem;
+		}
+		.ip1 img{
+			width:3.4rem;
+			height:3.3rem;
+		}
+		.ip2{
+			width:3.4rem;
+			height:1.58rem;
+			background:rgba(216,216,216,1);
+			border-radius:0.09rem;
+			overflow: hidden;
+			float: right;
+			margin-top: 0.18rem;
+			margin-right: 0.28rem;
+		}
+		.ip2 img{
+			width:3.4rem;
+			height:1.58rem;
+		}
+		.ip3{
+			width:3.4rem;
+			height:1.58rem;
+			border-radius:0.09rem;
+			overflow: hidden;
+			float: right;
+			margin-top: 0.15rem;
+			margin-right: 0.28rem;
+		}
+		.ip3 img{
+			width:3.4rem;
+			height:1.58rem;
+		}
+		.ip4{
+			width:6.93rem;
+			height:3.22rem;
+			background:rgba(25,51,91,1);
+			border-radius:0.09rem;
+			overflow: hidden;
+    		margin-top: 3.64rem;
+			margin-left: 0.28rem;
+			clear: both;
+		}
+		.ip4 img{
+			width:6.93rem;
+			height:3.22rem;
+		}
+		.newShelf{
+			margin-top: 0.48rem;		
+		}
+		.special_banner{
+			width: 100%;
+			/*height: 7rem;*/
+			margin-top: 0.18rem;
+			position: relative;
+		}
+		#special-main{
+			width: 4.47rem;
+			height: 5.95rem;
+		    -webkit-perspective:1200px;
+			-moz-perspective:1200px;
+			-ms-perspective:1200px;
+			perspective:1200px;
+			overflow: visible;
+		}
+		#special-wrapper{
+			width: 4.47rem;
+			height: 5.95rem;
+			-webkit-transform-style:preserve-3d;
+			-moz-transform-style:preserve-3d;
+			-ms-transform-style:preserve-3d;
+			transform-style:preserve-3d
+		}
+		.special-slide img{
+			width: 4.47rem;
+			height: 4.47rem;
+			transition: 0.1s;
+			position: absolute;
+		    top: 37%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		    /*box-shadow: 0px 0.31rem 0.32rem -0.24rem rgba(80,81,233,0.38);*/
+		}
+		.special-slide{
+			width: 4.47rem;
+			height: 5.95rem;
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			position: relative;
+			border-radius:0.1rem;
+			overflow: hidden;
+		}
+		.specSildeBottom{
+			width:4.47rem;
+			height:1.48rem;
+			background:rgba(255,255,255,1);
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+		.specSildeBottomTitle{
+			width:4.47rem;
+			margin-top: 0.23rem;
+			font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.specSildeBottomPrice{
+			width:4.47rem;
+			margin-top: 0.17rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+		}
+		.specSildeBottomPrice span{
+			font-size: 0.36rem;
+		}
+		.hot{
+			margin-top: 0.36rem;
+		}
+		.hotShopp{
+			margin-top: 0.18rem;
+		}
+		.hotItem{
+			width:3.34rem;
+			height:4.5rem;
+			border-radius:0.1rem;
+			margin-left: 0.26rem;
+			margin-bottom: 0.26rem;
+			display: inline-block;
+		}
+		.hotItemImg{
+			width:3.34rem;
+			height:3.34rem;
+		}
+		.hotItemImg img{
+			width:3.34rem;
+			height:3.34rem;
+		}
+		.hotItemBottom{
+			width:3.34rem;
+			height:1.2rem;
+			background:rgba(255,255,255,1);
+			overflow: hidden;
+		}
+		.hotItemTitle{
+			width:3.34rem;
+			text-indent: 0.21rem;
+			margin-top: 0.11rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+		}
+		.hotItemPrice{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			float: left;
+			margin-top: 0.07rem;
+			margin-left: 0.20rem;
+		}
+		.hotItemPrice span{
+			font-size: 0.32rem;
+		}
+		.hotItemPoints{
+			margin-top: 0.12rem;
+			font-size:0.22rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			float: right;
+			margin-right: 0.24rem;
+		}
+		.mui-scroll-wrapper {
+		    position: absolute;
+		    z-index: 2;
+		    top: 0;
+		    bottom: 0.96rem;
+		    left: 0;
+		    overflow: hidden;
+		    width: 100%;
+		}
+		.tabbar{
+			width:7.5rem;
+			height:0.96rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0rem -0.06rem 0.16rem 0rem rgba(0,0,0,0.06);
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+		}
+		.tabbar div{
+			width: 20%;
+			height: 0.96rem;
+			text-align: center;
+		}
+		.tabbar div img{
+			display: block;
+		}
+		.index img{
+			width: 0.39rem;
+			height: 0.36rem;
+			margin: 0 auto;
+			margin-top: 0.16rem;	
+		}
+		.cateify img{
+			width: 0.41rem;
+			height: 0.40rem;
+			margin: 0 auto;
+			margin-top: 0.14rem;
+		}
+		.card img{
+			width: 0.38rem;
+			height: 0.36rem;
+			margin: 0 auto;
+			margin-top: 0.19rem;	
+		}
+		.cart img{
+			width: 0.41rem;
+			height: 0.38rem;
+			margin: 0 auto;
+			margin-top: 0.16rem;
+		}
+		.self img{
+			width: 0.35rem;
+			height: 0.37rem;
+			margin: 0 auto;
+			margin-top: 0.15rem;	
+		}
+		.tabbar span{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.28rem;
+		}
+		.index span{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			line-height:0.28rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="page-container" style="top: 0rem;">
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:#f8f8f8;">
+			<div class="mui-scroll">
+				<div class="branner">
+					<div class="swiper-container brannerSwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide brannerSilde">
+								<img src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngaceb0d5756cf2488b404ec4e7e820fbc3268b6ac927eb5a6aee1d5e71733e99c"/>
+							</div>
+							<div class="swiper-slide brannerSilde">
+								<img src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngaceb0d5756cf2488b404ec4e7e820fbc3268b6ac927eb5a6aee1d5e71733e99c"/>
+							</div>
+							<div class="swiper-slide brannerSilde">
+								<img src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngaceb0d5756cf2488b404ec4e7e820fbc3268b6ac927eb5a6aee1d5e71733e99c"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="search">
+					<div class="searchMain">
+						<img src="../../../img/mall/icon_search.png"/>
+						<input type="search" name="" id="" value="" placeholder="檀香木" style="text-align: left;"/>
+					</div>
+				</div>
+				<div class="iconTop">
+					<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="height: 1.5rem;">
+					    <div class="mui-scroll iconItem">
+							<div class="nav_item">
+								<div class="item_img">
+									<img src="http://kcallme-mall.oss-cn-beijing.aliyuncs.com/images/d0b36caaa7bf406899fe8df53331e2a2.png"/>
+								</div>
+								<div class="item_title">
+									国风
+								</div>
+							</div>
+							<div class="nav_item">
+								<div class="item_img">
+									<img src="http://kcallme-mall.oss-cn-beijing.aliyuncs.com/images/d0b36caaa7bf406899fe8df53331e2a2.png"/>
+								</div>
+								<div class="item_title">
+									国风
+								</div>
+							</div>
+							<div class="nav_item">
+								<div class="item_img">
+									<img src="http://kcallme-mall.oss-cn-beijing.aliyuncs.com/images/d0b36caaa7bf406899fe8df53331e2a2.png"/>
+								</div>
+								<div class="item_title">
+									国风
+								</div>
+							</div>
+					    </div>
+					</div>
+				</div>
+				<div class="wind">
+					<div class="windTop">
+						<div class="windTopTitle">
+							国风专场
+						</div>
+						<div class="windTopAll">
+							<div class="all-right">
+								<img src="../../../img/mall/blue_right.png"/>
+							</div>
+							<span class="windTopAllText">
+								全部
+							</span>
+						</div>
+					</div>
+					<div class="windBottom">
+						<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="height: 2.9rem;">
+					    	<div class="mui-scroll windMain">
+					    		<div class="windShopp" style="margin-left: 0.28rem;">
+					    			<div class="windShoppImg">
+					    				<img src="../../../img/mall/gf.JPG"/>
+					    			</div>
+					    			<div class="windShoppTitle">
+					    				月饼勋章
+					    			</div>
+					    			<div class="windShoppPrice">
+					    				¥<span>299</span>.00
+					    			</div>
+					    		</div>
+					    		<div class="windShopp">
+					    			<div class="windShoppImg">
+					    				<img src="../../../img/mall/gf.JPG"/>
+					    			</div>
+					    			<div class="windShoppTitle">
+					    				月饼勋章
+					    			</div>
+					    			<div class="windShoppPrice">
+					    				¥<span>299</span>.00
+					    			</div>
+					    		</div>
+					    		<div class="windShopp">
+					    			<div class="windShoppImg">
+					    				<img src="../../../img/mall/gf.JPG"/>
+					    			</div>
+					    			<div class="windShoppTitle">
+					    				月饼勋章
+					    			</div>
+					    			<div class="windShoppPrice">
+					    				¥<span>299</span>.00
+					    			</div>
+					    		</div>
+					    		<div class="windShopp">
+					    			<div class="windShoppImg">
+					    				<img src="../../../img/mall/gf.JPG"/>
+					    			</div>
+					    			<div class="windShoppTitle">
+					    				月饼勋章
+					    			</div>
+					    			<div class="windShoppPrice">
+					    				¥<span>299</span>.00
+					    			</div>
+					    		</div>
+					    	</div>
+					    </div>
+					</div>
+
+				</div>
+				<div class="ip">
+					<div class="ipTop">
+						<div class="ipTopTitle">
+							主题IP
+						</div>
+					</div>
+					<div class="ip1">
+						<img src="../../../img/mall/ip1.JPG"/>
+					</div>
+					<div class="ip2">
+						<img src="../../../img/mall/ip2.JPG"/>
+					</div>
+					<div class="ip3">
+						<img src="../../../img/mall/ip3.JPG"/>
+					</div>
+					<div class="ip4">
+						<img src="../../../img/mall/ip4.JPG"/>
+					</div>
+				</div>
+				<div class="newShelf">
+					<div class="newShelfTop" style="margin-top: 0rem;">
+						<div class="newShelfTopTitle">
+							新品上架
+						</div>
+					</div>
+					<div class="newShelfMain">
+						<div class="special_banner">
+							<div class="swiper-container " id="special-main">
+							  <div class="swiper-wrapper" id="special-wrapper">
+							    <div class="swiper-slide special-slide" data-id='1'>
+							    	<img src="../../../img/mall/new.JPG"/>
+							    	<div class="specSildeBottom">
+							    		<div class="specSildeBottomTitle">
+							    			狮子座星座蛋糕
+							    		</div>
+							    		<div class="specSildeBottomPrice">
+							    			¥<span>199</span>.00
+							    		</div>
+							    	</div>
+							    </div>
+							    <div class="swiper-slide special-slide" data-id='4'>
+							    	<img src="../../../img/mall/new.JPG"/>
+							    	<div class="specSildeBottom">
+							    		<div class="specSildeBottomTitle">
+							    			狮子座星座蛋糕
+							    		</div>
+							    		<div class="specSildeBottomPrice">
+							    			¥<span>199</span>.00
+							    		</div>
+							    	</div>
+							    </div>
+							    <div class="swiper-slide special-slide" data-id='4'>
+							    	<img src="../../../img/mall/new.JPG"/>
+							    	<div class="specSildeBottom">
+							    		<div class="specSildeBottomTitle">
+							    			狮子座星座蛋糕
+							    		</div>
+							    		<div class="specSildeBottomPrice">
+							    			¥<span>199</span>.00
+							    		</div>
+							    	</div>
+							    </div>
+							    <div class="swiper-slide special-slide" data-id='4'>
+							    	<img src="../../../img/mall/new.JPG"/>
+							    	<div class="specSildeBottom">
+							    		<div class="specSildeBottomTitle">
+							    			狮子座星座蛋糕
+							    		</div>
+							    		<div class="specSildeBottomPrice">
+							    			¥<span>199</span>.00
+							    		</div>
+							    	</div>
+							    </div>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hot">
+					<div class="hotTop" style="margin-top: 0rem;">
+						<div class="hotTopTitle">
+							爆款推荐
+						</div>
+					</div>
+					<div class="hotShopp">
+						<div class="hotItem">
+							<div class="hotItemImg">
+								<img src="../../../img/mall/hot.JPG"/>
+							</div>
+							<div class="hotItemBottom">
+								<div class="hotItemTitle">
+									MoMo潮流熊
+								</div>
+								<div class="hotItemPrice">
+									¥<span>199</span>.00
+								</div>
+							</div>
+						</div>
+						<div class="hotItem">
+							<div class="hotItemImg">
+								<img src="../../../img/mall/hot.JPG"/>
+							</div>
+							<div class="hotItemBottom">
+								<div class="hotItemTitle">
+									MoMo潮流熊
+								</div>
+								<div class="hotItemPrice">
+									¥<span>199</span>.00
+								</div>
+							</div>
+						</div>
+						<div class="hotItem">
+							<div class="hotItemImg">
+								<img src="../../../img/mall/hot.JPG"/>
+							</div>
+							<div class="hotItemBottom">
+								<div class="hotItemTitle">
+									MoMo潮流熊
+								</div>
+								<div class="hotItemPrice">
+									¥<span>199</span>.00
+								</div>
+							</div>
+						</div>
+						<div class="hotItem">
+							<div class="hotItemImg">
+								<img src="../../../img/mall/hot.JPG"/>
+							</div>
+							<div class="hotItemBottom">
+								<div class="hotItemTitle">
+									MoMo潮流熊
+								</div>
+								<div class="hotItemPrice">
+									¥<span>199</span>.00
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tabbar">
+		<div class="index">
+			<img src="../../../img/mall/index-over.png"/>
+			<span>首页</span>
+		</div>
+		<div class="cateify">
+			<img src="../../../img/mall/cateify.png"/>
+			<span>分类</span>
+		</div>
+		<div class="card">
+			<img src="../../../img/mall/card.png"/>
+			<span>卡券</span>
+		</div>
+		<div class="cart">
+			<img src="../../../img/mall/cart.png"/>
+			<span>购物车</span>
+		</div>
+		<div class="self">
+			<img src="../../../img/mall/self.png"/>
+			<span>我的</span>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+$(".brannerSilde").on("tap",function (){
+	mui.openWindow({
+		id:'index-id',
+		url:'./list.html'
+	})
+})
+$(".windShopp,.special-slide,.hotItem").on("tap",function (){
+	mui.openWindow({
+		id:'index-id',
+		url:'./goodsDetail.html'
+	})
+})
+$(".search").on("tap",function (){
+	mui.openWindow({
+		id:'index-id',
+		url:'./search.html'
+	})
+})
+$(".cateify").on("tap",function (){
+	mui.openWindow({
+		id:'index-id',
+		url:'./category.html'
+	})
+})
+$(".card").on("tap",function (){
+	mui.openWindow({
+		id:'cate-id',
+		url:'./card.html'
+	})
+})
+$(".cart").on("tap",function (){
+	mui.openWindow({
+		id:'cate-id',
+		url:'./cart.html'
+	})
+})
+$(".self").on("tap",function (){
+	mui.openWindow({
+		id:'cate-id',
+		url:'../self/index.html'
+	})
+})
+$(document).ready(function () {
+ var mySwiper = new Swiper ('.brannerSwiper', {
+    direction: 'horizontal',
+    loop: true,
+  }) 
+  var mySwiper1 = new Swiper('#special-main',{
+		  watchSlidesProgress: true,
+		  slidesPerView: 'auto',
+		  centeredSlides: true,
+		  loop: true,
+		  loopedSlides: 4,
+		  pagination: {
+	      	el: '#special-point',
+	      	clickable:true
+	     },
+		  on: {
+		   progress: function(progress) {
+			    for (i = 0; i < this.slides.length; i++) {
+				     var slide = this.slides.eq(i);
+				     var slideProgress = this.slides[i].progress;
+				     modify = 1;
+				     if (Math.abs(slideProgress) > 1) {
+				      modify = (Math.abs(slideProgress) - 1) * 10 + 5;
+				     }
+					     translate = slideProgress * modify * 0.01 + 'rem';
+					     scale = 1 - Math.abs(slideProgress) / 5;
+					     zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+					     slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+					     slide.css('zIndex', zIndex);
+					     slide.css('opacity', 1);
+				     if (Math.abs(slideProgress) > 1) {
+				      	slide.css('opacity', 1);
+				     }
+			    }
+		   },
+		   setTransition: function(transition) {
+			    for (var i = 0; i < this.slides.length; i++) {
+			     	var slide = this.slides.eq(i)
+			     	slide.transition(transition);
+			    }
+		   }
+	  	}
+ 	})
+})
+   
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+})
+</script>

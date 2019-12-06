@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>叩我网</title>
+	<link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+	<link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css"/>
+	<link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css"/>
+	<script type="text/javascript" src="../../../js/mall/ChinesePY.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper.min.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mui.min.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style type="text/css">
+		body{
+			background-color: white;
+		}
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.cardItem{
+			width: 6.95rem;
+			height: 2.5rem;
+			background-image: url(../../../img/mall/icon_cardBg.png);
+			background-size: 6.95rem 2.5rem;
+			background-repeat: no-repeat;
+			margin: 0 auto;
+			margin-top: 0.18rem;
+			position: relative;
+			overflow: hidden;
+		}
+		.cardItemBorder{
+			width:6.2rem;
+			height:0.03rem;
+			border:0.01rem dashed rgba(255,255,255,0.4);
+			position: absolute;
+			top: 1.83rem;
+			left: 0.38rem;
+		}
+		.cardName{
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(248,248,248,1);
+			margin-top: 0.21rem;
+			margin-left: 0.41rem;
+		}
+		.cardPrice{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			position: absolute;
+			right: 0.36rem;
+			top: 0.25rem;
+		}
+		.cardPrice span{
+			font-size:0.32rem;
+		}
+		.cardNumber{
+			display: flex;
+			justify-content: flex-start;
+			position: absolute;
+			top: 1.18rem;
+			left: 0.69rem;
+		}
+		.cardNumber img{
+			width: 2.69rem;
+			height: 0.13rem;
+		    margin-top: 0.12rem;
+		}
+		.cardNumber div{
+			margin-left: 0.17rem;
+			font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(236,237,255,1);
+			letter-spacing:0.01rem;
+		}
+		.charge{
+			width:1.4rem;
+			height:0.46rem;
+			background:rgba(255,255,255,1);
+			border-radius:23px;
+			position: absolute;
+			right: 0.31rem;
+			top: 1.28rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(250,76,155,1);
+			text-align: center;
+			line-height: 0.46rem;
+		}
+		.linePay{
+			width:1.4rem;
+			height:0.46rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.23rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(250,76,155,1);
+			line-height: 0.46rem;
+			text-align: center;
+			position: absolute;
+			right: 0.31rem;
+			bottom: 0.09rem;
+		}
+		.cardDate{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(248,248,248,1);
+			position: absolute;
+			bottom: 0.17rem;
+			left: 0.36rem;
+		}
+		.mui-scroll-wrapper {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			bottom: 0.8rem;
+			left: 0;
+			overflow: hidden;
+			width: 100%;
+		}
+		.bindCard{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(236,236,236,1);
+			border-radius:0.4rem;
+			position: fixed;
+			bottom: 0;
+			left: 0.27rem;
+			font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			text-align: center;
+			line-height: 0.8rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		我的卡包
+	</div>
+</div>
+<div class="page-container" style="top: 0.88rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:white;">
+		<div class="mui-scroll">
+			<div class="cardItem">
+				<div class="cardName">
+					VIP卡
+				</div>
+				<div class="cardPrice">
+					剩余：<span>299</span>.00
+				</div>
+				<div class="cardNumber">
+					<img src="../../../img/mall/icon_Number.png"/>
+					<div>0010</div>
+				</div>
+				<div class="charge">
+					充值
+				</div>
+				<div class="cardDate">
+					有效期：2019.02.21 - 2019.11.25
+				</div>
+				<div class="linePay">线下支付</div>
+				<div class="cardItemBorder"></div>
+			</div>
+			<div class="cardItem">
+				<div class="cardName">
+					VIP卡
+				</div>
+				<div class="cardPrice">
+					剩余：<span>299</span>.00
+				</div>
+				<div class="cardNumber">
+					<img src="../../../img/mall/icon_Number.png"/>
+					<div>0010</div>
+				</div>
+				<div class="charge">
+					充值
+				</div>
+				<div class="cardDate">
+					有效期：2019.02.21 - 2019.11.25
+				</div>
+				<div class="linePay">线下支付</div>
+				<div class="cardItemBorder"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bindCard">
+		绑卡
+</div>
+</body>
+</html>
+<script>
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".cardItem").on("tap",function (){
+		mui.openWindow({
+			id:'cardList-id',
+			url:'./cardDetail.html'
+		})
+	})
+	$(".charge").on("tap",function (e){
+		mui.openWindow({
+			id:'index-id',
+			url:'./cardCharge.html'
+		})
+		e.stopPropagation()
+	})
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+})
+</script>

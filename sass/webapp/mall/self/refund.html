@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.tab{
+			width:7.5rem;
+			height:0.9rem;
+			background:rgba(255,255,255,1);
+			position: fixed;
+			top: 0.88rem;
+			left: 0rem;
+			display: flex;
+			justify-content:flex-start;
+		}
+		.tabivew{
+			width: 33.3%;
+			height: 0.9rem;
+		}
+		.nav{
+			width:1.66rem;
+			height:0.5rem;
+			border-radius:0.1rem;
+			text-align: center;
+			line-height: 0.5rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+		}
+		.nav.active{
+			color:rgba(255,255,255,1);
+			background:rgba(116,59,21,1);
+			box-shadow:0rem 0.1rem 0.1rem -0.08rem rgba(116,59,21,0.5);
+		}
+		.shoppItem{
+			width:6.93rem;
+			height:2.7rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.18rem;
+		}
+		.shoppItemTop{
+			width: 100%;
+			height: 0.68rem;
+		}
+		.shoppItemOrderId{
+			float: left;
+			height: 0.68rem;
+			line-height: 0.68rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(34,34,34,1);
+			margin-left: 0.24rem;
+		}
+		.itemRefund{
+			width:1.3rem;
+			height:0.5rem;
+			background:rgba(116,59,21,1);
+			border-radius:0.25rem;
+			float: right;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			margin-right: 0.22rem;
+			margin-top: 0.18rem;
+			line-height: 0.5rem;
+			text-align: center;
+		}
+		.shoppItemMain{
+			width:100%;
+			height: 1.7rem;
+			display: flex;
+			justify-content: flex-start;
+			margin-top: 0.06rem;
+		}
+		.shoppItemImg{
+			width:1.7rem;
+			height:1.7rem;
+			border-radius:0.2rem;
+			margin-left: 0.24rem;
+			overflow: hidden;
+		}
+		.shoppItemImg img{
+			width:1.7rem;
+			height:1.7rem;
+		}
+		.shoppItemMessage{
+			width: 4.82rem;
+			height: 1.7rem;
+			margin-top:0.08rem;
+			margin-left: 0.17rem;
+		}
+		.shoppItemName{
+			width: 4.82rem;
+			height: 0.4rem;
+			line-height: 0.4rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.shoppItemCenter{
+			width: 4.82rem;
+		}
+		.shoppItemSku{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-top: 0.04rem;
+			float: left;
+		}
+		.shoppItemPrice{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			float: right;
+			margin-right: 0.22rem;
+			margin-top: -0.05rem;
+		}
+		.shoppItemPrice span{
+			font-size: 0.36rem;
+		}
+		.shoppItemNum{
+			clear: both;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			float: right;
+			margin-right: 1.15rem;
+		}
+		.shoppItemright{
+			height: 0.68rem;
+			line-height: 0.68rem;
+		    float: right;
+	    	font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			margin-right: 0.24rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		售后
+	</div>
+</div>
+<div class="tab">
+	<div class="tabivew">
+		<div class="nav active" data-type="1">
+			申请售后
+		</div>
+	</div>
+	<div class="tabivew">
+		<div class="nav" data-type="2">
+			处理中
+		</div>
+	</div>
+	<div class="tabivew">
+		<div class="nav" data-type="3">
+			已完成
+		</div>
+	</div>
+</div>
+<div class="page-container" style="top: 1.78rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:#f8f8f8;">
+		<div class="mui-scroll">
+				<div class="shoppItem">
+					<div class="shoppItemTop">
+						<div class="shoppItemOrderId">
+							订单号：48857495984
+						</div>
+						<div class="itemRefund">
+							申请售后
+						</div>
+					</div>
+					<div class="shoppItemMain">
+						<div class="shoppItemImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="shoppItemMessage">
+							<div class="shoppItemName">
+								北极熊粉
+							</div>
+							<div class="shoppItemCenter">
+								<div class="shoppItemSku">
+									8寸 6-8人食用
+								</div>
+								<div class="shoppItemPrice">
+									¥<span>299</span>.00
+								</div>
+							</div>
+							<div class="shoppItemNum">
+								x2
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="shoppItem">
+					<div class="shoppItemTop">
+						<div class="shoppItemOrderId">
+							订单号：48857495984
+						</div>
+						<div class="shoppItemright">
+							处理中
+						</div>
+					</div>
+					<div class="shoppItemMain">
+						<div class="shoppItemImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="shoppItemMessage">
+							<div class="shoppItemName">
+								北极熊粉
+							</div>
+							<div class="shoppItemCenter">
+								<div class="shoppItemSku">
+									8寸 6-8人食用
+								</div>
+								<div class="shoppItemPrice">
+									¥<span>299</span>.00
+								</div>
+							</div>
+							<div class="shoppItemNum">
+								x2
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="shoppItem">
+					<div class="shoppItemTop">
+						<div class="shoppItemOrderId">
+							订单号：48857495984
+						</div>
+						<div class="shoppItemright">
+							已退货退款
+						</div>
+					</div>
+					<div class="shoppItemMain">
+						<div class="shoppItemImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="shoppItemMessage">
+							<div class="shoppItemName">
+								北极熊粉
+							</div>
+							<div class="shoppItemCenter">
+								<div class="shoppItemSku">
+									8寸 6-8人食用
+								</div>
+								<div class="shoppItemPrice">
+									¥<span>299</span>.00
+								</div>
+							</div>
+							<div class="shoppItemNum">
+								x2
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script>
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+	$(".nav").on("tap",function (){
+		$(".nav.active").removeClass("active")
+		if(!$(this).hasClass("active")){
+			$(this).addClass("active")
+		}
+	})
+	$(".itemRefund").on("tap",function (){
+		mui.openWindow({
+			id:'REFUND-ID',
+			url:'./refundApply.html'
+		})
+	})
+})
+</script>

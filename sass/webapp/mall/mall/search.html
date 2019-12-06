@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.search{
+			width:7.5rem;
+			height:1.07rem;
+			background:rgba(244,244,244,1);
+			overflow: hidden;
+		}
+		.searchMain{
+			width:6.95rem;
+			height:0.71rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.1rem;
+			margin: 0 auto;
+			margin-top: 0.18rem;
+			position: relative;
+		}
+		.searchMain img{
+			width: 0.36rem;
+			height: 0.33rem;
+			position: absolute;
+			left: 0.21rem;
+			top: 50%;
+			margin-top: -0.165rem;
+		}
+		.searchMain input{
+			margin-top: 0.07rem;
+			margin-left: 0.8rem;
+			color:rgba(205,205,205,1);
+		}
+		.hot{
+			width:6.94rem;
+			height: 2.74rem;
+			margin: 0 auto;
+			border-bottom:0.01rem solid rgba(244,244,244,1);
+		}
+		.hotTop{
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-top: 0.28rem;
+		}
+		.hotList{
+			margin-top: 0.24rem;
+		}
+		.hotItem{
+			width:1.5rem;
+			height:0.5rem;
+			background:rgba(244,244,244,1);
+			border-radius:0.25rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			line-height: 0.5rem;
+			text-align: center;
+			display: inline-block;
+			margin-bottom: 0.36rem;
+		}
+		.history{
+			width:6.94rem;
+			margin: 0 auto;
+			margin-top: 0.33rem;
+		}
+		.historyTopTitle{
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			/*margin-left: 0.28rem;*/
+			float: left;
+		}
+		.historyDo{
+			float: right;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+		    margin-top: 0.08rem;
+		}
+		.historyDoMain{
+			float: right;
+			font-size:0.28rem;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.cancel{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			margin-right: 0.28rem;
+			margin-top: 0.08rem;
+		}
+		.allDel{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-top: 0.08rem;
+		}
+		
+		.historyList{
+			margin-top: 0.74rem;
+			clear: both;
+		}
+		.historyItem{
+		    width: 6.94rem;
+		    margin-top: 0.24rem;
+			display: inline-block;
+		}
+		.historyText{
+			float: left;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			/*margin-left: 0.28rem;*/
+		}
+		.historyDel{
+			width:0.55rem;
+			height:0.55rem;
+			float: right;
+		}
+		.historyDel img{
+			width:0.55rem;
+			height:0.55rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		搜索
+	</div>
+</div>
+<div class="page-container" style="top: 0.88rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:white;">
+		<div class="mui-scroll">
+			<div class="search">
+				<div class="searchMain">
+					<img src="../../../img/mall/icon_search.png"/>
+					<input type="search" name="" id="" value="" placeholder="檀香木" style="text-align: left;"/>
+				</div>
+			</div>
+			<div class="hot">
+				<div class="hotTop">
+					热门
+				</div>
+				<div class="hotList">
+					<div class="hotItem">
+						奶油
+					</div>
+					<div class="hotItem">
+						芝士
+					</div>
+					<div class="hotItem">
+						糖果
+					</div>
+					<div class="hotItem">
+						巧克力
+					</div>
+					<div class="hotItem">
+						法式
+					</div>
+				</div>
+			</div>
+			<div class="history">
+				<div class="historyTopTitle">
+					搜索历史
+				</div>
+				<div class="historyDo" >
+					删除
+				</div>
+				<div class="historyDoMain" style="display:none">
+					<div class="cancel">取消</div>
+					<div class="allDel">
+						全部删除
+					</div>
+				</div>
+				<div class="historyList">
+					<div class="historyItem">
+						<div class="historyText">
+							奶油蛋糕
+						</div>
+						<div class="historyDel">
+							<img src="../../../img/mall/icon_search_delete.png"/>
+						</div>
+					</div>
+					<div class="historyItem">
+						<div class="historyText">
+							奶油蛋糕
+						</div>
+						<div class="historyDel">
+							<img src="../../../img/mall/icon_search_delete.png"/>
+						</div>
+					</div>
+					<div class="historyItem">
+						<div class="historyText">
+							奶油蛋糕
+						</div>
+						<div class="historyDel">
+							<img src="../../../img/mall/icon_search_delete.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script>
+	$(".historyDo").on("tap",function (){
+		$(".historyDoMain").show()
+		$(".historyDo").hide()
+	})
+	$(".cancel").on("tap",function (){
+		$(".historyDoMain").hide()
+		$(".historyDo").show()
+	})
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+})
+</script>

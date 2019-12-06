@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.mui-scroll-wrapper {
+		    position: absolute;
+		    z-index: 2;
+		    top: 0;
+		    bottom:1.08rem;
+		    left: 0;
+		    overflow: hidden;
+		    width: 100%;
+		}
+		
+		.countDown{
+			width: 7.5rem;
+			height: 0.33rem;
+			line-height: 0.33rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:#222222;
+			text-align: center;
+			margin-top: 0.18rem;
+		}
+		.countDown span{
+			color: #EA4E62;
+		}
+		.userMessage{
+			width:6.93rem;
+			height:1.49rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+			overflow: hidden;
+		}
+		.userTop{
+			width: 6.93rem;
+			height: 0.42rem;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.userName{
+			font-size:0.3rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-left:0.27rem;
+			margin-top: 0.24rem;
+		}
+		.userMobile{
+			font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			margin-top: 0.28rem;
+			margin-left: 0.2rem;
+		}
+		.userAddress{
+			font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-top: 0.40rem;
+			margin-left: 0.25rem;
+		}
+		.shoppMessage{
+			width:6.93rem;
+			height:2.34rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+			overflow: hidden;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.shoppImg{
+			width:1.86rem;
+			height:1.86rem;
+			border-radius:0.2rem;
+			margin-top: 0.24rem;
+			margin-left: 0.27rem;
+			overflow: hidden;
+		}
+		.shoppImg img{
+			width:1.86rem;
+			height:1.86rem;
+		}
+		.shoppMain{
+			width: 4rem;
+			margin-left: 0.23rem;
+		}
+		.shoppName{
+			width: 4rem;
+			height:0.4rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			line-height:0.4rem;
+			margin-top: 0.26rem;
+		}
+		.shoppSku{
+			height:0.33rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.33rem;
+			margin-top: 0.04rem;
+		}
+		.shoppBottom{
+			width:4rem;
+			margin-top: 0.56rem;
+		}
+		.shoppPrice{
+			float: left;
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(116,59,21,1);
+		}
+		.shoppPrice span{
+			font-size: 0.36rem;
+		}
+		.shoppNum{
+			float: right;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-right: -0.25rem;
+		}
+		.customer{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin: 0 auto;
+			margin-top: 0.2rem;
+			text-align: center;
+			line-height: 0.8rem;
+		}
+		.time{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+		 	display: flex;
+			flex-flow:  row nowrap;
+			justify-content: space-between;
+			line-height: 0.8rem;
+		}
+		.itemLeft{
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-left: 0.25rem;
+		}
+		.itemRight{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-right: 0.25rem;
+		}
+		.orderList{
+			width:6.93rem;
+			height:3.54rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;	
+			overflow: hidden;
+		}
+		.orderItem{
+			width: 6.93rem;
+			height:0.4rem;
+			line-height:0.4rem;
+			display: flex;
+			flex-flow:  row nowrap;
+			justify-content: space-between;
+			margin-bottom: 0.14rem;
+			
+		}
+		.orderList>div:first-child{
+			margin-top: 0.2rem;
+		}
+		.footerDo{
+			width:7.5rem;
+			height:1.08rem;
+			background:rgba(255,255,255,1);
+			position: fixed;
+			bottom: 0rem;
+			left: 0rem;
+			display: flex;
+			justify-content: flex-end;
+		}
+		.payOrder{
+			width:1.8rem;
+			height:0.6rem;
+			background:rgba(116,59,21,1);
+			border-radius:1rem;
+			text-align: center;
+			line-height: 0.6rem;
+			margin-top: 0.24rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			margin-right: 0.28rem;
+		}
+		.confirmOrder{
+			width:1.8rem;
+			height:0.6rem;
+			background:rgba(116,59,21,1);
+			border-radius:1rem;
+			text-align: center;
+			line-height: 0.6rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			margin-top: 0.24rem;
+			margin-right: 0.28rem;
+		}
+		.extend{
+			width:1.8rem;
+			height:0.6rem;
+			border-radius:1rem;
+			border:0.01rem solid rgba(181,181,181,1);
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			margin-top: 0.24rem;
+			margin-right: 0.28rem;
+			text-align: center;
+			line-height: 0.6rem;
+		}
+		.goContent{
+			width:1.8rem;
+			height:0.6rem;
+			background:rgba(116,59,21,1);
+			border-radius:1rem;
+			text-align: center;
+			line-height: 0.6rem;
+			margin-top: 0.24rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			margin-right: 0.28rem;
+		}
+		.alginPay{
+			width:1.8rem;
+			height:0.6rem;
+			background:rgba(116,59,21,1);
+			border-radius:1rem;
+			text-align: center;
+			line-height: 0.6rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			margin-top: 0.24rem;
+			margin-right: 0.28rem;
+		}
+		.orderAllMessage{
+			height: 1.08rem;
+			line-height: 1.08rem;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.orderAllMessageNum{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-right: 0.3rem;
+		}
+		.orderAllMessagePrice{
+			font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-right: 0.41rem;
+		}
+		.orderAllMessagePrice span{
+			font-size:0.3rem;
+		}
+		.expressMessage{
+			width:6.93rem;
+			height:1.31rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			overflow: hidden;
+			margin: 0 auto;
+			margin-top: 0.18rem;
+		}
+		.expressMessagetop{
+			width: 6rem;
+			height:0.4rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(34,34,34,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin-top: 0.2rem;
+			margin-left: 0.28rem;
+		}
+		.expressMessageDate{
+			width: 6rem;
+			height:0.33rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.33rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin-top: 0.14rem;
+			margin-left: 0.28rem;
+		}
+		.payMessage{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+		 	display: flex;
+			flex-flow:  row nowrap;
+			justify-content: space-between;
+			line-height: 0.8rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		待支付
+	</div>
+</div>
+<div class="page-container" style="top: 0.88rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:#f8f8f8;">
+		<div class="mui-scroll">
+			<div class="countDown">
+				<span>6:59:59</span>后将取消订单
+			</div>
+			<div class="expressMessage">
+				<div class="expressMessagetop">
+					您的快递已到达北京航空（经转）
+				</div>
+				<div class="expressMessageDate">
+					2019.06.22 16:23:25
+				</div>
+			</div>
+			<div class="userMessage">
+				<div class="userTop">
+					<div class="userName">
+						刘秃
+					</div>
+					<div class="userMobile">
+						15928344584
+					</div>
+				</div>
+				<div class="userAddress">
+					北京市通州区中上园9号院38号楼3单元1203
+				</div>
+			</div>
+			<div class="shoppMessage">
+				<div class="shoppImg">
+					<img src="../../../img/mall/gf.JPG"/>
+				</div>
+				<div class="shoppMain">
+					<div class="shoppName">
+						北极熊-粉
+					</div>
+					<div class="shoppSku">
+						白色 12cm
+					</div>
+					<div class="shoppBottom">
+						<div class="shoppPrice">
+							¥<span>299</span>.00
+						</div>
+						<div class="shoppNum">
+							x6
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="customer">
+				联系商家
+			</div>
+			<div class="time">
+				<div class="itemLeft">
+					送货时间
+				</div>
+				<div class="itemRight">
+					预计2019.08.08
+				</div>
+			</div>
+			<div class="orderList">
+				<div class="orderItem">
+					<div class="itemLeft">
+						订单信息
+					</div>
+					<div class="itemRight">
+						订单号：62655635115
+					</div>
+				</div>
+				<div class="orderItem">
+					<div class="itemLeft">
+						下单时间
+					</div>
+					<div class="itemRight">
+						2019.06.21 16:23:25
+					</div>
+				</div>
+				<div class="orderItem">
+					<div class="itemLeft">
+						商品金额
+					</div>
+					<div class="itemRight">
+						￥2932.00
+					</div>
+				</div>
+				<div class="orderItem">
+					<div class="itemLeft">
+						运费
+					</div>
+					<div class="itemRight">
+						￥10.00
+					</div>
+				</div>
+				<div class="orderItem">
+					<div class="itemLeft">
+						积分抵扣
+					</div>
+					<div class="itemRight" style="color: #743B15;">
+						- ￥10.00
+					</div>
+				</div>
+				<div class="orderItem">
+					<div class="itemLeft">
+						优惠劵
+					</div>
+					<div class="itemRight" style="color: #743B15;">
+						- ￥10.00
+					</div>
+				</div>
+			</div>
+			<div class="payMessage">
+				<div class="itemLeft">
+					支付信息
+				</div>
+				<div class="itemRight">
+					卡支付（73878378473847）
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footerDo">
+	<div class="orderAllMessage">
+		<div class="orderAllMessageNum">
+			共6件
+		</div>
+		<div class="orderAllMessagePrice">
+			合计: ¥<span>299</span>.00
+		</div>
+	</div>
+	<div class="payOrder">
+		去支付
+	</div>
+	<!--<div class="extend">
+		 延长收货
+	</div>
+	<div class="confirmOrder">
+		确认收货
+	</div>-->
+	<!--<div class="goContent">
+		去评价
+	</div>
+	<div class="alginPay">
+		再次购买
+	</div>-->
+</div>
+</body>
+</html>
+<script>
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+})
+</script>

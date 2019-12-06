@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>叩我网</title>
+	<link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+	<link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css"/>
+	<link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css"/>
+	<script type="text/javascript" src="../../../js/mall/ChinesePY.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper.min.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mui.min.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style type="text/css">
+		body{
+			background-color: white;
+		}
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.tabbar{
+			width:7.5rem;
+			height:0.96rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0rem -0.06rem 0.16rem 0rem rgba(0,0,0,0.06);
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+		    z-index: 9;
+		}
+		.tabbar div{
+			width: 20%;
+			height: 0.96rem;
+			text-align: center;
+		}
+		.tabbar div img{
+			display: block;
+		}
+		.index img{
+			width: 0.39rem;
+			height: 0.36rem;
+			margin: 0 auto;
+			margin-top: 0.16rem;	
+		}
+		.cateify img{
+			width: 0.41rem;
+			height: 0.40rem;
+			margin: 0 auto;
+			margin-top: 0.14rem;
+		}
+		.card img{
+			width: 0.38rem;
+			height: 0.36rem;
+			margin: 0 auto;
+			margin-top: 0.19rem;	
+		}
+		.cart img{
+			width: 0.41rem;
+			height: 0.38rem;
+			margin: 0 auto;
+			margin-top: 0.16rem;
+		}
+		.self img{
+			width: 0.35rem;
+			height: 0.37rem;
+			margin: 0 auto;
+			margin-top: 0.15rem;	
+		}
+		.tabbar span{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.28rem;
+		}
+		.index span{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			line-height:0.28rem;
+		}
+		.mui-scroll-wrapper {
+		    position: absolute;
+		    z-index: 2;
+		    top: 0;
+		    bottom: 1rem;
+		    left: 0;
+		    overflow: hidden;
+		    width: 100%;
+		}
+		.bind,.cardL,.coupon{
+			width: 6.94rem;
+			height: 0.72rem;
+			margin: 0 auto;
+			margin-top: 0.54rem;
+		}
+		.bindIcon,.cardLIcon,.couponIcon{
+			width:0.9rem;
+			height:0.72rem;
+			border-radius:0.1rem;
+			float: left;
+		}
+		.bindIcon img,.cardLIcon img,.couponIcon img{
+			width:0.9rem;
+			height:0.72rem;
+		}
+		.bindTitle,.cardLTitle,.couponTitle{
+			width: 1.5rem;
+			height: 0.72rem;
+			line-height: 0.72rem;
+			float: left;
+			font-size:0.32rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-left: 0.19rem;
+		}
+		.bindRight,.cardLRight,.couponRight{
+			width: 3rem;
+			height: 0.72rem;
+			float: right;
+			line-height: 0.72rem;
+		}
+		.bindText,.cardLText,.couponText{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			float: right;
+		}
+		.bindJ,.cardLJ,.couponJ{
+			width:0.7rem;
+			height:0.7rem;
+			float: right;
+		}
+		.bindJ img,.cardLJ img,.couponJ img{
+			width:0.7rem;
+			height:0.7rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		卡/券
+	</div>
+</div>
+<div class="page-container" style="top: 0.88rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:white;">
+		<div class="mui-scroll">
+			<div class="bind">
+				<div class="bindIcon">
+					
+				</div>
+				<div class="bindTitle">
+					扫一扫
+				</div>
+				<div class="bindRight">
+					<div class="bindJ">
+						<img src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+					<div class="bindText">
+						扫一扫立即绑卡
+					</div>
+				</div>
+			</div>
+			<div class="cardL">
+				<div class="cardLIcon">
+					 <img src="../../../img/mall/icon_cardLogo.png"/>
+				</div>
+				<div class="cardLTitle">
+					卡包
+				</div>
+				<div class="cardLRight">
+					<div class="cardLJ">
+						<img src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+					<div class="cardLText">
+						共3张 1张可用
+					</div>
+				</div>
+			</div>
+			<div class="coupon">
+				<div class="couponIcon">
+					<img src="../../../img/mall/icon_couponLogo.png"/>
+				</div>
+				<div class="couponTitle">
+					券包
+				</div>
+				<div class="couponRight">
+					<div class="couponJ">
+						<img src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+					<div class="couponText">
+						共3张 1张可用
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="tabbar">
+	<div class="index">
+		<img src="../../../img/mall/index-over.png"/>
+		<span>首页</span>
+	</div>
+	<div class="cateify">
+		<img src="../../../img/mall/cateify.png"/>
+		<span>分类</span>
+	</div>
+	<div class="card">
+		<img src="../../../img/mall/card.png"/>
+		<span>卡券</span>
+	</div>
+	<div class="cart">
+		<img src="../../../img/mall/cart.png"/>
+		<span>购物车</span>
+	</div>
+	<div class="self">
+		<img src="../../../img/mall/self.png"/>
+		<span>我的</span>
+	</div>
+</div>
+</body>
+</html>
+<script>
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".cardL").on("tap",function (){
+		mui.openWindow({
+			id:'card-id',
+			url:'./cardList.html'
+		})
+	})
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+	$(".index").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./index.html'
+		})
+	})
+	$(".cateify").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./category.html'
+		})
+	})
+	$(".cart").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./cart.html'
+		})
+	})
+	$(".self").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'../self/index.html'
+		})
+	})
+})
+</script>

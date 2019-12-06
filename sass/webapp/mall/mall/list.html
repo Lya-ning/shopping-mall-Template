@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+	
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style type="text/css">
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.tabList{
+			width: 7.5rem;
+			height: 0.7rem;
+			background: white;	
+			position:fixed;
+			top: 0.88rem;
+		}
+		.sales,.price,.series,.flavor{
+			width: 25%;
+			height: 0.5rem;
+			float: left;
+		}
+		.sales div,.price div,.series div,.flavor div{
+			width: 1.2rem;
+			height: 0.5rem;
+			margin: 0 auto;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			text-align: center;
+			line-height: 0.5rem;
+		}
+		.active{
+			background:rgba(116,59,21,1);
+			box-shadow:0rem 0.1rem 0.1rem -0.08rem rgba(116,59,21,0.5);
+			border-radius:0.1rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1) !important;
+		}
+		.itemShopp{
+			width:3.34rem;
+			height:4.5rem;
+			border-radius:0.1rem;
+			overflow: hidden;
+			display: inline-block;
+			margin-left: 0.26rem;
+			margin-top: 0.26rem;
+		}
+		.shoppImg{
+			width:3.34rem;
+			height:3.34rem;
+		}
+		.shoppImg img{
+			width:3.34rem;
+			height:3.34rem;
+		}
+		.shoppBottom{
+			width:3.34rem;
+			height:1.2rem;
+			background:rgba(255,255,255,1);
+			overflow: hidden;
+		}
+		.shoppTitle{
+			width:3.34rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-top: 0.07rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			text-indent: 0.21rem;
+		}
+		.shoppPrice{
+			display: inline-block;
+			text-indent: 0.21rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			margin-top: 0.07rem;
+			vertical-align: bottom;
+		}
+		.shoppPrice span{
+			font-size:0.32rem;
+		}
+		.shoppPoints{
+			font-size:0.22rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			display: inline-block;
+			vertical-align: bottom;
+			margin-left: 0.4rem;
+		}
+		.shoppD{
+			width:6.93rem;
+			height:7.72rem;
+			border-radius:0.1rem;
+			margin: 0 auto;
+			overflow: hidden;
+			margin-top: 0.26rem;
+		}
+		.shoppDImg{
+			width:6.93rem;
+			height:6.52rem;
+		}
+		.shoppDImg img{
+			width:6.93rem;
+			height:6.52rem;
+		}
+		.shoppDBottom{
+			width:6.92rem;
+			height:1.20rem;
+			background:rgba(255,255,255,1);
+			overflow: hidden;
+		}
+		.shoppDtitle{
+			width: 6.92rem;
+			text-indent: 0.21rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin-top: 0.11rem;
+		}
+		.shoppDPrice{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			margin-top: 0.07rem;
+			text-indent: 0.21rem;
+			display: inline-block;
+			vertical-align: bottom;
+		}
+		.shoppDPrice span{
+			font-size: 0.32rem;
+		}
+		.shoppDPoints{
+			height:0.3rem;
+			font-size:0.22rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.3rem;
+			display: inline-block;
+			vertical-align: bottom;
+			margin-top: 0.07rem;
+			margin-left: 4rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		商品列表
+	</div>
+	<div class="page-right-icon">
+		<img src="../../../img/mall/icon_search.png"/>
+	</div>
+</div>
+<div class="tabList">
+	<div class="sales">
+		<div class="tabNav active">
+			销量
+		</div>
+	</div>
+	<div class="price">
+		<div class="tabNav">
+			价格
+		</div>
+	</div>
+	<div class="series">
+		<div class="tabNav">
+			系列
+		</div>
+	</div>
+	<div class="flavor">
+		<div class="tabNav">
+			口味
+		</div>
+	</div>
+</div>
+<div class="page-container" style="top: 1.55rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:#f8f8f8;">
+		<div class="mui-scroll">
+			<div class="itemShopp">
+				<div class="shoppImg">
+					<img src="../../../img/mall/hot.JPG"/>
+				</div>
+				<div class="shoppBottom">
+					<div class="shoppTitle">
+						MoMo潮流熊
+					</div>
+					<div class="shoppPrice">
+						¥<span>299</span>.00
+					</div>
+				</div>
+			</div>
+			<div class="itemShopp">
+				<div class="shoppImg">
+					<img src="../../../img/mall/hot.JPG"/>
+				</div>
+				<div class="shoppBottom">
+					<div class="shoppTitle">
+						MoMo潮流熊
+					</div>
+					<div class="shoppPrice">
+						¥<span>299</span>.00
+					</div>
+				</div>
+			</div>
+			<div class="shoppD">
+				<div class="shoppDImg">
+					<img src="../../../img/mall/hot.JPG"/>
+				</div>
+				<div class="shoppDBottom">
+					<div class="shoppDtitle">
+						MoMo潮流熊
+					</div>
+					<div class="shoppDPrice">
+						¥<span>299</span>.00
+					</div>
+				</div>
+			</div><div class="itemShopp">
+				<div class="shoppImg">
+					<img src="../../../img/mall/hot.JPG"/>
+				</div>
+				<div class="shoppBottom">
+					<div class="shoppTitle">
+						MoMo潮流熊
+					</div>
+					<div class="shoppPrice">
+						¥<span>299</span>.00
+					</div>
+				</div>
+			</div>
+			<div class="itemShopp">
+				<div class="shoppImg">
+					<img src="../../../img/mall/hot.JPG"/>
+				</div>
+				<div class="shoppBottom">
+					<div class="shoppTitle">
+						MoMo潮流熊
+					</div>
+					<div class="shoppPrice">
+						¥<span>299</span>.00
+					</div>
+				</div>
+			</div>
+			<div class="shoppD">
+				<div class="shoppDImg">
+					<img src="../../../img/mall/hot.JPG"/>
+				</div>
+				<div class="shoppDBottom">
+					<div class="shoppDtitle">
+						MoMo潮流熊
+					</div>
+					<div class="shoppDPrice">
+						¥<span>299</span>.00
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script>
+$(".tabNav").on("tap",function(){
+	$("div.active").removeClass("active")
+	if(!$(this).hasClass("active")){
+		$(this).addClass("active")	
+	}
+})
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+})
+</script>

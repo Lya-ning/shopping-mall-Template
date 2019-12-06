@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+	
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.branner{
+			width:6.95rem;
+			height:6.95rem;
+			margin: 0 auto;
+		}
+		.shoppMessage{
+			width: 7.5rem;
+			height: 2.86rem;
+			position: relative;
+		}
+		.shoppMessageMain{
+			width:6.5rem;
+			height:2.86rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0rem 0.05rem 0.4rem 0rem rgba(0,0,0,0.06);
+			border-radius:0.1rem;
+			position: absolute;
+			left: 0.51rem;
+			top: -0.4rem;
+			z-index: 9;
+		}
+		.shoppMessageTitle{
+			width: 6.3rem;
+			margin-top: 0.2rem;
+			margin-left: 0.28rem;
+			font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(34,34,34,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.shoppMessagePrice{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-top: 0.2rem;
+			margin-left: 0.28rem;
+		}
+		.shoppMessagePrice span{
+			font-size: 0.36rem;
+		}
+		.shoppMessageTips{
+			margin-top: 0.22rem;
+			margin-left: 0.28rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+		}
+		.tapSku{
+			width:6.2rem;
+			height:0.8rem;
+			border-top:0.01rem solid rgba(244,244,244,1);
+			margin: 0 auto;
+			margin-top: 0.2rem;
+			line-height: 0.8rem
+		}
+		.tapSkuText{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			text-indent: 0.13rem;
+			float: left;
+		}
+		.tapSkuImg{
+			width: 0.55rem;
+    		height: 0.55rem;
+			margin-top: 0.1rem;
+			float: right;
+		}
+		.tapSkuImg img{
+		    width: 0.55rem;
+    		height: 0.55rem;
+		}
+		.nav{
+			width:7.5rem;
+			height:0.9rem;
+			background:rgba(255,255,255,1);
+			color:rgba(112,112,112,1);
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 999;
+		}
+		.nav div{
+			width: 25%;
+			height: 0.9rem;
+			float: left;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+		}
+		.nav div span{
+			width:1.2rem;
+			height:0.5rem;
+			display: block;
+			line-height: 0.5rem;
+			text-align: center;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			
+			font-size: 0.28rem;
+			margin: 0 auto;
+			margin-top: 0.20rem;
+		}
+		.navactive{
+			width:1.2rem;
+			height:0.5rem;
+			background:rgba(116,59,21,1);
+			box-shadow:0rem 0.1rem 0.1rem -0.08rem rgba(116,59,21,0.5);
+			border-radius:0.1rem;
+			display: inline-block;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+		}
+		.content{
+			
+		}
+		.contentTopTitle{
+			text-indent: 0.29rem;
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.contentMain{
+			width: 100%;
+			height: 2.7rem;
+			margin-top: 0.18rem;
+		}
+		.contentItem{
+			width:6.18rem;
+			height:2.7rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			display: inline-block;
+			margin-left: 0.2rem;
+			overflow: hidden;
+			text-align: left;
+		}
+		.userPhoto{
+			width:0.6rem;
+			height:0.6rem;
+			margin-top: 0.23rem;
+			margin-left: 0.28rem;
+			border-radius: 50%;
+			overflow: hidden;
+			display: inline-block;
+		}
+		.userPhoto img{
+			width:0.6rem;
+			height:0.6rem;
+		}
+		.userNameDate{
+			width: 3rem;
+			height: 0.6rem;
+			margin-top: 0.23rem;
+			margin-left: 0.16rem;
+			display: inline-block;
+		}
+		.userName{
+			font-size:0.24rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			text-align: left;
+		}
+		.userDate{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			text-align:left;
+		}
+		.contentStar{
+			clear: both;
+			/*margin-top: 0.16rem;*/
+			margin-left: 0.36rem;
+			text-align: left;
+		}
+		.contentStar img{
+			width:0.18rem;
+			height:0.18rem;
+			/*margin-left: 0.07rem;*/
+		}
+		.contentText{
+			width:5.34rem;
+			height:0.66rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			line-height:0.33rem;
+			margin-top: 0.3rem;
+			margin-left: 0.44rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.hotShopp{
+			margin-top: 0.28rem;
+		}
+		.hotShoppTitle{
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			text-indent: 0.29rem;
+		}
+		.hotShoppList{
+			 margin-left: 0.12rem;
+			 margin-top: 0.18rem;
+		}
+		.hotShoppItem{
+			width:2.2rem;
+			height:3.61rem;
+			border-radius:0.1rem;
+			margin-left: 0.12rem;
+			/*margin-left: 0.17rem;*/
+			margin-bottom: 0.18rem;
+			overflow: hidden;
+			background:rgba(255,255,255,1);
+			display: inline-block;
+		}
+		.hotImg{
+			width:2.2rem;
+			height:2.21rem;
+		}
+		.hotImg img{
+			width:2.2rem;
+			height:2.21rem;
+		}
+		.hotTitle{
+			width:2rem;
+			height:0.66rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			line-height:0.33rem;
+			margin-top: 0.08rem;
+			margin-left: 0.09rem;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+		}
+		.hotPrice{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			margin-top: 0.08rem;
+			margin-left: 0.09rem
+		}
+		.hotPrice span{
+			font-size:0.28rem;
+		}
+		.detailsTopTitle{
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-left: 0.29rem;
+		}
+		.detailsImg{
+			margin-top: 0.18rem;
+		}
+		.detailsImg,.detailsImg img{
+		    width: 100%;
+		}
+		.look{
+			margin-top: 0.28rem;
+		}
+		.lookTopTitle{
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-left: 0.29rem;
+		}
+		.lookList{
+			margin-top: 0.18rem;
+		}
+		.lookItem{
+			width:3.34rem;
+			height:4.5rem;
+			border-radius:0.1rem;
+			margin-left: 0.27rem;
+			background:rgba(255,255,255,1);
+			display: inline-block;
+			overflow: hidden;
+			margin-bottom: 0.26rem;
+		}
+		.lookItemImg{
+			width:3.34rem;
+			height:3.34rem;
+		}
+		.lookItemImg img{
+			width:3.34rem;
+			height:3.34rem;
+		}
+		.lookItemTitle{
+			width: 3rem;
+			text-indent: 0.21rem;
+			margin-top: 0.07rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.lookItemPrice{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			margin-left: 0.2rem;
+			margin-top: 0.07rem;
+		}
+		.lookItemPrice span{
+			font-size:0.32rem;
+		}
+		.footer{
+			width:7.5rem;
+			height:1rem;
+			background:rgba(255,255,255,1);
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			justify-content: flex-start;
+		}
+		
+		.footerLeft{
+			width: 3.41rem;
+			height: 1rem;
+			display: flex;
+			justify-content: center;
+			float: left;
+		}
+		.customer{
+			width: 33.3%;
+			height: 1rem;
+			/*margin-left: 0.66rem;*/
+			text-align: center;
+		}
+		.customerImg{
+			width: 100%;
+			height: 0.42rem;
+			margin-top: 0.15rem;
+		}
+		.customerImg img{
+			width: 0.42rem;
+			height: 0.42rem;
+		}
+		.customerText{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-top: 0.04rem;
+			height: 0.28rem;
+			line-height: 0.28rem;
+		}
+		.favor{
+			width: 33.3%;
+			height: 1rem;
+			text-align: center;
+		}
+		.favorImg{
+			width: 100%;
+			height: 0.31rem;
+			margin-top: 0.23rem;
+		}
+		.favorImg img{
+			width: 0.35rem;
+			height: 0.31rem;
+		}
+		.favorText{
+			height:0.28rem;
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.28rem;
+			margin-top: 0.09rem;
+		}
+		.cart{
+			width: 33.3%;
+			height: 1rem;
+			text-align: center;
+		}
+		.cartImg{
+			width: 100%;
+			height: 0.31rem;
+			margin-top: 0.23rem;
+		}
+		.cartImg img{
+			width: 0.36rem;
+			height: 0.31rem;
+		}
+		.cartText{
+			height:0.28rem;
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.28rem;
+			margin-top: 0.09rem;
+		}
+		.footerRight{
+			float: right;
+			display:flex;
+			justify-content: center;
+			margin-top: 0.2rem;
+		}
+		.addJoin{
+			width: 1.91rem;
+			height: 0.6rem;
+		    border-radius: 1rem 0rem 0rem 1rem;
+		    background:rgba(241,209,180,1);
+		    text-align: center;
+		    line-height: 0.6rem;
+		    font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+		}
+		.buyNow{
+			width: 1.91rem;
+			height: 0.6rem;
+		    border-radius: 0 0.34rem 0.34rem 0;
+		    background:rgba(116,59,21,1);
+		    font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			text-align: center;
+		    line-height: 0.6rem;
+		}
+		.skuChoice{
+			width:7.5rem;
+			height:9.05rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0rem -0.05rem 0.24rem 0rem rgba(0,0,0,0.1);
+			position: absolute;
+			left: 0;
+			bottom: -10rem;
+			transition: all 0.35s;
+		}
+		.skuImg{
+			width:2.1rem;
+			height:2.1rem;
+			margin-top: 0.43rem;
+			margin-left: 0.28rem;
+			float: left;
+			border-radius:0.09rem;
+			overflow: hidden;
+		}
+		.skuImg img{
+			width:2.1rem;
+			height:2.1rem;
+		}
+		.skuShoppMessage{
+			width: 4rem;
+			height: 2.1rem;
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+		}
+		.skuTitleName{
+			width: 4rem;
+			height: 0.8rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(34,34,34,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			margin-top: 0.62rem;
+			margin-left: 0.3rem;
+		}
+		.skuShoppPrice{
+			width: 4rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			margin-left: 0.3rem;
+			margin-top: 0.65rem;
+		}
+		.skuShoppPrice span{
+			font-size: 0.28rem;
+		}
+		.skuMain{
+			width: 7.5rem;
+			clear: both;
+			margin-top: 0.8rem;
+		}
+		.skuMainTopTitle{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(34,34,34,1);
+			margin-left: 0.28rem;
+		}
+		.skuList{
+			height: 4rem;
+		}
+		.skuItem{
+			width:2rem;
+			height:0.5rem;
+			background:rgba(249,249,249,1);
+			border-radius:0.3rem;
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			text-align: center;
+			line-height: 0.5rem;
+			margin-left: 0.4rem;
+			margin-top: 0.2rem;
+			display: inline-block;
+		}
+		.changeNum{
+			
+		}
+		.changeNumTopTitle{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(34,34,34,1);
+			margin-left: 0.28rem;
+			float: left;
+		}
+		.changeNumMain{
+			float: left;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.numMinus{
+			width: 0.88rem;
+			height: 0.88rem;
+			margin-top: -0.2rem;
+			margin-left: 0.25rem;
+		}
+		.numMinus img{
+			width: 0.23rem;
+			height: 0.2rem;
+			display: block;
+			margin: 0 auto;
+			margin-top: 0.3rem;
+		}
+		.numAnswer{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,117,174,1);
+			line-height: 0.88rem;
+			text-align:center;
+			margin-top: -0.25rem;
+		}
+		.numAdd{
+			width: 0.88rem;
+			height: 0.88rem;
+			margin-top: -0.2rem;
+		}
+		.numAdd img{
+			width: 0.23rem;
+			height: 0.2rem;
+			display: block;
+			margin: 0 auto;
+			margin-top: 0.3rem;
+		}
+		.sub{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(116,59,21,1);
+			border-radius:0.4rem;
+			text-align: center;
+			line-height: 0.8rem;
+			clear: both;
+			margin: 0 auto;
+			font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+		}
+		.closeSku{
+			position: absolute;
+		    top: 0.2rem;
+    		right: -0.8rem;
+		    width: 0.50rem;
+		    height: 0.50rem;
+		    background-image: url(../../../img/mall/icon_detail_mask_close.png);
+		    background-size: 0.26rem 0.26rem;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		商品详情
+	</div>
+	<div class="page-right-icon">
+		<img src="../../../img/mall/icon_search.png"/>
+	</div>
+</div>
+<div class="nav" style="display: none;">
+	<div class="navShopp">
+		<span class="navactive">
+			商品
+		</span>
+	</div>
+	<div class="navContent">
+		<span>
+			评论
+		</span>
+	</div>
+	<div class="navDetail">
+		<span>
+			详情
+		</span>
+	</div>
+	<div class="navRecommend">
+		<span>
+			推荐
+		</span>
+	</div>
+</div>
+<div class="page-container" style="top: 0.88rem;bottom: 1rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:#f4f4f4;">
+		<div class="mui-scroll">
+			<div class="branner">
+				<div class="mui-slider">
+				  <div class="mui-slider-group">
+				    <div class="mui-slider-item">
+				    	<img src="http://kcallme-mall.oss-cn-beijing.aliyuncs.com/images/7d8c8f4e3c4e4170acd83604e7276402.png?x-oss-process=image/resize,w_400"/>
+				    </div>
+				    <div class="mui-slider-item">
+				    	<img src="http://kcallme-mall.oss-cn-beijing.aliyuncs.com/images/7d8c8f4e3c4e4170acd83604e7276402.png?x-oss-process=image/resize,w_400"/>
+				    </div>
+				  </div>
+				</div>
+			</div>
+			<div class="shoppMessage">
+				<div class="shoppMessageMain">
+					<div class="shoppMessageTitle">
+						北极熊-粉
+					</div>
+					<div class="shoppMessagePrice">
+						¥<span>1078</span>.00
+					</div>
+					<div class="shoppMessageTips">
+						7天无理由退换货 15天后不退不换
+					</div>
+					<div class="tapSku">
+						<div class="tapSkuText">
+							选择规格/数量
+						</div>
+						<div class="tapSkuImg">
+							<img src="../../../img/mall/icon_detail_arrow_right.png"/>							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="contentTopTitle">
+					评论
+				</div>
+				<div class="contentMain">
+					<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="height: 2.7rem;">
+				    	<div class="mui-scroll contentList">
+			    			<div class="contentItem" style="margin-left: 0.29rem;">
+			    				<div class="userPhoto">
+			    					<img src="http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKYndQUv6zdgbQwo6iaicwYZpShBbVian47Y3GtTk3NZKXRz4vdicQeMEN0uvszJk9dibPibrMrgbakckDg/132"/>
+			    				</div>
+			    				<div class="userNameDate">
+			    					<div class="userName">
+			    						都不放白
+			    					</div>
+			    					<div class="userDate">
+			    						2019.07.12 22:12:40
+			    					</div>
+			    				</div>
+			    				<div class="contentStar">
+			    					<img src="../../../img/mall/star.png"/>
+			    					<img src="../../../img/mall/star.png"/>
+			    					<img src="../../../img/mall/star.png"/>
+			    					<img src="../../../img/mall/star.png"/>
+			    					<img src="../../../img/mall/no_star.png"/>
+			    				</div>
+			    				<div class="contentText">
+			    					蛋糕能做成像艺术品一样的也就只有你家了，味道 也很好吃
+			    				</div>
+			    			</div>
+			    			<div class="contentItem">
+			    				<div class="userPhoto">
+			    					<img src="http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKYndQUv6zdgbQwo6iaicwYZpShBbVian47Y3GtTk3NZKXRz4vdicQeMEN0uvszJk9dibPibrMrgbakckDg/132"/>
+			    				</div>
+			    				<div class="userNameDate">
+			    					<div class="userName">
+			    						都不放白
+			    					</div>
+			    					<div class="userDate">
+			    						2019.07.12 22:12:40
+			    					</div>
+			    				</div>
+			    				<div class="contentStar">
+			    					<img src="../../../img/mall/star.png"/>
+			    					<img src="../../../img/mall/star.png"/>
+			    					<img src="../../../img/mall/star.png"/>
+			    					<img src="../../../img/mall/star.png"/>
+			    					<img src="../../../img/mall/no_star.png"/>
+			    				</div>
+			    				<div class="contentText">
+			    					蛋糕能做成像艺术品一样的也就只有你家了，味道 也很好吃
+			    				</div>
+			    			</div>
+				    	</div>
+					</div>
+				</div>
+			</div>
+			<div class="hotShopp">
+				<div class="hotShoppTitle">
+					店铺推荐
+				</div>
+				<div class="hotShoppList">
+					<div class="hotShoppItem">
+						<div class="hotImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="hotTitle">
+							夏蝉书签礼盒 文化 创意产品 精美夏蝉书签礼盒 文化 创意产品 精美
+						</div>
+						<div class="hotPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="hotShoppItem">
+						<div class="hotImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="hotTitle">
+							夏蝉书签礼盒 文化 创意产品 精美夏蝉书签礼盒 文化 创意产品 精美
+						</div>
+						<div class="hotPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="hotShoppItem">
+						<div class="hotImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="hotTitle">
+							夏蝉书签礼盒 文化 创意产品 精美夏蝉书签礼盒 文化 创意产品 精美
+						</div>
+						<div class="hotPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="hotShoppItem">
+						<div class="hotImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="hotTitle">
+							夏蝉书签礼盒 文化 创意产品 精美夏蝉书签礼盒 文化 创意产品 精美
+						</div>
+						<div class="hotPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="hotShoppItem">
+						<div class="hotImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="hotTitle">
+							夏蝉书签礼盒 文化 创意产品 精美夏蝉书签礼盒 文化 创意产品 精美
+						</div>
+						<div class="hotPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="hotShoppItem">
+						<div class="hotImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="hotTitle">
+							夏蝉书签礼盒 文化 创意产品 精美夏蝉书签礼盒 文化 创意产品 精美
+						</div>
+						<div class="hotPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="details">
+				<div class="detailsTopTitle">
+					宝贝详情
+				</div>
+				<div class="detailsImg">
+					<img src="http://kcallme-mall.oss-cn-beijing.aliyuncs.com/images/7c0902b76fcb45c39ba640bb4f50be78.png"/>
+				</div>
+			</div>
+			<div class="look">
+				<div class="lookTopTitle">
+					看了又看
+				</div>
+				<div class="lookList">
+					<div class="lookItem">
+						<div class="lookItemImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="lookItemTitle">
+							MoMo潮流熊
+						</div>
+						<div class="lookItemPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="lookItem">
+						<div class="lookItemImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="lookItemTitle">
+							MoMo潮流熊
+						</div>
+						<div class="lookItemPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="lookItem">
+						<div class="lookItemImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="lookItemTitle">
+							MoMo潮流熊
+						</div>
+						<div class="lookItemPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="lookItem">
+						<div class="lookItemImg">
+							<img src="../../../img/mall/hot.JPG"/>
+						</div>
+						<div class="lookItemTitle">
+							MoMo潮流熊
+						</div>
+						<div class="lookItemPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="footerLeft">
+		<div class="customer">
+			<div class="customerImg">
+				<img src="../../../img/mall/kf.png"/>
+			</div>
+			<div class="customerText">
+				客服
+			</div>
+		</div>
+		<div class="favor">
+			<div class="favorImg">
+				<img src="../../../img/mall/sc.png"/>
+			</div>
+			<div class="favorText">
+				收藏
+			</div>
+		</div>
+		<div class="cart">
+			<div class="cartImg">
+				<img src="../../../img/mall/detailImg.png"/>
+			</div>
+			<div class="cartText">
+				购物车
+			</div>
+		</div>
+	</div>
+	<div class="footerRight">
+		<div class="addJoin cartOk">
+			加入购物车
+		</div>
+		<div class="buyNow buyOk">
+			立即购买
+		</div>
+	</div>
+</div>
+<div class="skuChoice">
+	<div class="skuImg">
+		<img src="../../../img/mall/gf.JPG"/>
+	</div>
+	<div class="skuShoppMessage">
+		<div class="closeSku">
+			
+		</div>
+		<div class="skuTitleName">
+			北极熊-粉
+		</div>
+		<div class="skuShoppPrice">
+			¥<span>299</span>.00
+		</div>
+	</div>
+	<div class="skuMain">
+		<div class="skuMainTopTitle">
+			规格
+		</div>
+		<div class="skuList">
+			<div class="skuItem">
+				红色
+			</div>
+			<div class="skuItem">
+				黄色
+			</div>
+			<div class="skuItem">
+				蓝色
+			</div>
+			<div class="skuItem">
+				紫色
+			</div>
+			<div class="skuItem">
+				黑色
+			</div>
+		</div>
+	</div>
+	<div class="changeNum">
+		<div class="changeNumTopTitle">
+			数量
+		</div>
+		<div class="changeNumMain">
+			<div class="numMinus">
+				<img src="../../../img/mall/icon_detail_minus.png"/>
+			</div>
+			<div class="numAnswer">
+				1
+			</div>
+			<div class="numAdd">
+				<img src="../../../img/mall/icon_detail_plus.png"/>
+			</div>
+		</div>
+	</div>
+	<div class="sub">
+		确定
+	</div>
+</div>
+</body>
+</html>
+<script>
+$(".nav div").on("tap",function (){
+	$("span.navactive").removeClass("navactive")
+	if(!$(this).children("span").hasClass("navactive")){
+		$(this).children("span").addClass("navactive")
+	}
+})
+$(".tapSku").on("tap",function (){
+	$(".skuChoice").css("bottom","0rem")
+})
+$(".buyNow").on("tap",function (){
+	$(this).removeClass("buyOk")
+	$(".skuChoice").css("bottom","0rem")
+})
+$(".addJoin").on("tap",function (){
+	$(this).removeClass("cartOk")
+	$(".skuChoice").css("bottom","0rem")
+})
+$(".closeSku").on("tap",function (){
+	if(!$(".addJoin").hasClass("cartOk")){
+		$(".addJoin").addClass("cartOk")
+	}else if(!$(".buyNow").hasClass("buyOk")){
+		$(".buyNow").addClass("buyOk")
+	}
+	$(".skuChoice").css("bottom","-10rem")
+})
+$(".numAdd").on("tap",function (){
+	$(".numAnswer").html(Number($(".numAnswer").html())+1)
+})
+$(".numMinus").on("tap",function (){
+	if(Number($(".numAnswer").html()) == 1){
+		return
+	}
+	$(".numAnswer").html(Number($(".numAnswer").html())-1)
+})
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+})
+</script>

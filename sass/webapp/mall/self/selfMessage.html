@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.setting-block {
+	    	width:6.95rem;
+			background:rgba(255,255,255,1);
+			margin: 0.28rem auto;
+			border-radius:0.2rem;
+			overflow: hidden;
+	    }
+	    .setting-block .setting-item {
+	    	position: relative;
+	    	width: 100%;
+	    	height: 0.98rem;
+	    	background-color: #ffffff;
+	    }
+	    .setting-block .setting-item:last-child:after {
+	    	background-color: transparent;
+	    }
+	    .setting-block .setting-item .setting-item-text {
+	    	position: absolute;
+	    	top: 50%;
+	    	left: 0.2rem;
+	    	height: 0.5rem;
+	    	line-height: 0.5rem;
+	    	margin-top: -0.25rem;
+	    	font-size:0.3rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+	    }
+	    .setting-block .setting-item .setting-item-value {
+	    	position: absolute;
+	    	top: 50%;
+	    	right: 0.7rem;
+	    	height: 0.5rem;
+	    	line-height: 0.5rem;
+	    	margin-top: -0.25rem;
+	    	font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+	    }
+	    .setting-block .setting-item .setting-item-photo {
+	    	position: absolute;
+	    	top: 50%;
+	    	right: 0.7rem;
+	    	width: 0.68rem;
+	    	height: 0.68rem;
+	    	margin-top: -0.34rem;
+	    	border-radius: 50%;
+	    	background-color: #cccccc;
+	    	background-repeat: no-repeat;
+	    	background-size: cover;
+	    	background-position: center;
+	    }
+	    .setting-block .setting-item .setting-item-arrow {
+		   position: absolute;
+		    display: block;
+		    top: 30%;
+		    right: 0.1rem;
+		    margin-top: -0.15rem;
+		    width: 0.68rem;
+		    height: 0.66rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		资料
+	</div>
+</div>
+<div class="page-container" style="top: 0.88rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:#f8f8f8;">
+		<div class="mui-scroll">
+			<div class="setting-block">
+					<div id="info-photo" class="setting-item" data-id="info-photo">
+						<div class="setting-item-text">头像</div>
+						<div class="setting-item-photo" style="background-image: url('http://kcallme-mall.oss-cn-beijing.aliyuncs.com/img/1569479250335.jpeg');"></div>
+						<img class="setting-item-arrow" src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+					<div id="info-nick" class="setting-item" data-id="info-nick" data-url="./infoNick.html">
+						<div class="setting-item-text">昵称</div>
+						<div class="setting-item-value">-</div>
+						<img class="setting-item-arrow" src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+				</div>
+				<div class="setting-block">
+					<div id="info-sex" class="setting-item" data-id="info-sex">
+						<div class="setting-item-text">性别</div>
+						<div class="setting-item-value">保密</div>
+						<img class="setting-item-arrow" src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+					<div id="info-mobile" class="setting-item" data-id="info-mobile" data-url="./mobile.html">
+						<div class="setting-item-text">电话</div>
+						<div class="setting-item-value" id="mobile">-</div>
+						<img class="setting-item-arrow" src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+					<div id="info-birth" class="setting-item" data-id="info-birth">
+						<div class="setting-item-text">生日</div>
+						<div class="setting-item-value">-</div>
+						<img class="setting-item-arrow" src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script>
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+	$("#info-nick").on("tap",function (){
+		mui.openWindow({
+			id:'slef-id',
+			url:'./selfName.html'
+		})
+	})
+})
+</script>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.shopp{
+			width:6.93rem;
+			height:2.22rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.18rem;
+			overflow: hidden;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.shoppImg{
+			width:1.7rem;
+			height:1.7rem;
+			border-radius:0.2rem;
+			margin-top: 0.26rem;
+			margin-left: 0.24rem;
+			overflow: hidden;
+		}
+		.shoppImg img{
+			width:1.7rem;
+			height:1.7rem;
+		}
+		.shoppMessage{
+			width: 4.82rem;
+			height: 1.7rem;
+			margin-top: 0.34rem;
+			margin-left: 0.17rem;
+		}
+		.shoppTitle{
+			width: 4.82rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.shoppCenter{
+			width: 4.82rem;
+			height: 0.5rem;
+		}
+		.shoppSku{
+			float: left;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-top: 0.12rem;
+		}
+		.shoppPrice{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			float: right;
+			margin-top: 0.13rem;
+			margin-right: 0.22rem;
+			height: 0.5rem;
+		}
+		.shoppNum{
+			line-height: 0.33rem;
+			height:0.33rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			float: right;
+			margin-right: -0.3rem;
+		}
+		.shoppOrderId{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			margin-top: 0.31rem;
+		}
+		.customer{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			line-height: 0.8rem;
+			text-align: center;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+		}
+		.main{
+			width:6.93rem;
+			height:3.99rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+		}
+		.mainInput{
+			width: 6rem;
+			height: 1.76rem;
+			float: left;
+		}
+		.mainInput textarea{
+			border: none;
+			font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(205,205,205,1);
+		    line-height: 0.55rem;
+		}
+		.inputLogo{
+			width: 0.48rem;
+			height: 0.48rem;
+			margin-left: 0.28rem;
+			margin-top: 0.23rem;
+			float:left;
+		}
+		.inputLogo img{
+			width: 0.48rem;
+			height: 0.48rem;
+		}
+		.mainBottom{
+			clear: both;
+			display: flex;
+			justify-content: flex-start;
+		 	margin-right: 0.2rem;
+		}
+		.orderimg{
+			position: relative;
+		    width: 1.2rem;
+		    height: 1.2rem;
+		    box-shadow: 0px 0.18rem 0.66rem 0px rgba(80,81,233,0.1);
+		    display: inline-block;
+		    overflow: hidden;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		    background-position: center;
+		    background-color: #FFFFFF;
+		    border-radius: 0.1rem;
+		    margin-left: 0.28rem;
+		    margin-top: 0.52rem;
+		}
+		.orderimg img{
+			display: block;
+		    width: 0.7rem;
+		    height: 0.7rem;
+		    margin: 0.2rem auto;
+		}
+		.orderTips{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-top: 1.4rem;
+		    margin-left: 0.2rem;
+		}
+		.imgList{
+			display: flex;
+			justify-content: flex-start;
+		}
+		.imgList div{
+			width:1.2rem;
+			height:1.2rem;
+			background-size: 1.2rem 1.2rem;
+			margin-left: 0.28rem;
+    		margin-top: 0.52rem;
+		}
+		.sub{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(116,59,21,1);
+			border-radius:0.4rem;
+			position: fixed;
+			bottom: 0rem;
+			left: 0.27rem;
+			text-align: center;
+			line-height: 0.8rem;
+			font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);	
+		}
+		.mui-scroll-wrapper {
+		    position: absolute;
+		    z-index: 2;
+		    top: 0;
+		    bottom: 0.88rem;
+		    left: 0;
+		    overflow: hidden;
+		    width: 100%;
+		}
+		body{
+			background: #f8f8f8;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		售后申请
+	</div>
+</div>
+<div class="page-container" style="top: 0.88rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:#f8f8f8;">
+		<div class="mui-scroll">
+			<div class="shopp">
+				<div class="shoppImg">
+					<img src="../../../img/mall/hot.JPG"/>
+				</div>
+				<div class="shoppMessage">
+					<div class="shoppTitle">
+						北极熊粉
+					</div>
+					<div class="shoppCenter">
+						<div class="shoppSku">
+							8寸 6-8人食用
+						</div>
+						<div class="shoppPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="shoppNum">
+						x2
+					</div>
+					<div class="shoppOrderId">
+						订单号：48857495984
+					</div>
+				</div>
+			</div>
+			<div class="customer">
+				联系客服
+			</div>
+			<div class="main">
+				<div class="inputLogo">
+					<img src="../../../img/mall/icon_search_edit.png"/>
+				</div>
+				<div class="mainInput">
+					<textarea name="" rows="" cols="" placeholder="请描述您的售后问题"></textarea>
+				</div>
+				<div class="mainBottom">
+					<div class="imgList">
+						<div style="background-image: url(http://kcallme-mall.oss-cn-beijing.aliyuncs.com/images/dc23f2e0c69e42cb8914d120e51db21c.png);">
+							
+						</div>
+					</div>
+					<div class="orderimg">
+						<img src="../../../img/mall/icon_order_img.png"/>
+					</div>
+					<div class="orderTips">
+						（最多添加4张）
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="sub">
+	提交
+</div>
+</body>
+</html>
+<script>
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+})
+</script>

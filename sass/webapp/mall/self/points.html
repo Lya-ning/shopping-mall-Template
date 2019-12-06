@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.login-header {
+	   		position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 0.88rem;
+			background-color: rgba(0,0,0,0);
+			z-index: 100;
+	   	}
+	   	.login-header .page-title {
+			position: absolute;
+			top: 0.15rem;
+			left: 0.9rem;
+			right: 0.9rem;
+			height: 0.58rem;
+			border-radius: 0.29rem;
+			line-height: 0.6rem;
+			font-size: 0.32rem;
+			font-weight: bold;
+			color: #ffffff;
+			text-align: center;
+		}
+		.login-header .page-left-icon {
+			position: absolute;
+			width: 0.9rem;
+			height: 0.88rem;
+			top: 0;
+			left: 0;
+			font-size: 0.28rem;
+			text-align: center;
+			line-height: 0.88rem;
+			color: #f88834;
+		}
+		
+		.login-header .page-right-icon {
+			position: absolute;
+			width: 1.5rem;
+			height: 0.88rem;
+			top: 0;
+			right: 0;
+			font-size: 0.28rem;
+			text-align: center;
+			line-height: 0.88rem;
+			color: #ffffff;
+		}
+		
+		.login-header .page-left-icon img,
+		.login-header .page-right-icon img {
+			width: 0.38rem;
+			height: 0.38rem;
+			margin: 0.25rem;
+		}
+	    .login-bg {
+	    	width:7.50rem;
+			height: 3.23rem;
+			background-image: url("../../../img/mall/icon_pointsBg.png");
+			background-repeat: no-repeat;
+			background-position: cover;
+			background-size: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+	    }
+	    .login-middle {
+	    	position: absolute;
+	    	left: 50%;
+	    	bottom: 0.37rem;
+	    	margin-left: -0.86rem;
+	    	width:1.72rem;
+			height:1.72rem;
+			background:rgba(255,255,255,0.24960000000000002);
+			border-radius: 50%;
+	    }
+	    .user-integral {
+			height:0.50rem;
+			font-size:0.36rem;
+			font-family:PingFangSC;
+			font-weight:400;
+			color:rgba(255,227,203,1);
+			line-height:0.50rem;
+			text-align: center;
+			margin-top: 0.5rem;
+	    }
+	    .user-integral-text {
+			height:0.28rem;
+			font-size:0.20rem;
+			font-family:PingFangSC;
+			font-weight:400;
+			color:rgba(255,227,203,1);
+			line-height:0.28rem;
+			text-align: center;
+	    }
+	    .login-water {
+	    	background:rgba(255,255,255,0.24960000000000002);
+			border-radius: 50%;
+			color: #FFFFFF;
+			font-size: 0.24rem;
+			text-align: center;
+	    }
+	    .login-water-01 {
+	    	position: absolute;
+	    	left: 1.10rem;
+	    	bottom: 1.47rem;
+	    	width:0.68rem;
+			height:0.68rem;
+			line-height: 0.68rem;
+			text-align: center;
+			animation:ghostUpdown1 1.2s infinite ease-in-out alternate;
+			-webkit-animation:ghostUpdown1 1.2s infinite ease-in-out alternate;
+	    }
+		.login-water-02 {
+			position: absolute;
+	    	left: 1.77rem;
+	    	bottom: 0.41rem;
+	    	width:0.62rem;
+			height:0.62rem;
+			line-height: 0.62rem;
+			animation:ghostUpdown1 1.1s infinite 1s ease-in-out alternate;
+			-webkit-animation:ghostUpdown1 1.1s infinite 1s ease-in-out alternate;
+		}
+		.login-water-03 {
+			position: absolute;
+	    	right: 1.35rem;
+	    	bottom: 2.5rem;
+	    	width:0.80rem;
+			height:0.80rem;
+			line-height: 0.80rem;
+			animation:ghostUpdown1 1.5s infinite 0.5s ease-in-out alternate;
+			-webkit-animation:ghostUpdown1 1.5s infinite 0.5s ease-in-out alternate;
+		}
+		.login-water-04 {
+			position: absolute;
+	    	right: 1.65rem;
+	    	bottom: 0.65rem;
+	    	width:0.70rem;
+			height:0.70rem;
+			line-height: 0.70rem;
+			animation:ghostUpdown1 1.3s infinite 0.25s ease-in-out alternate;
+			-webkit-animation:ghostUpdown1 1.3s infinite 0.25s ease-in-out alternate;
+		}
+		.login-water-05 {
+			position: absolute;
+	    	left: 1.75rem;
+	    	bottom: 2.55rem;
+	    	width:0.70rem;
+			height:0.70rem;
+			line-height: 0.70rem;
+			animation:ghostUpdown1 1.4s infinite 0.25s ease-in-out alternate;
+			-webkit-animation:ghostUpdown1 1.4s infinite 0.25s ease-in-out alternate;
+		}
+		@keyframes ghostUpdown1 {
+			from {
+			    -webkit-transform: translate3d(0,0,0);
+			    transform: translate3d(0,0,0);
+			}
+			to {
+				-webkit-transform: translate3d(0,0.2rem,0);
+			    transform: translate3d(0,0.2rem,0);
+			}
+		}
+		@-webkit-keyframes ghostUpdown1 {
+			from {
+			    -webkit-transform: translate3d(0,0,0);
+			    transform: translate3d(0,0,0);
+			}
+			to {
+				-webkit-transform: translate3d(0,0.2rem,0);
+			    transform: translate3d(0,0.2rem,0);
+			}
+		}
+		.integral-title {
+			height:0.70rem;
+			font-size:0.26rem;
+			font-family:PingFangSC;
+			font-weight:bolder;
+			color:rgba(34,34,34,1);
+			line-height:0.70rem;
+			margin: 0.1rem 0.28rem;
+		}
+		.integral-list {
+			width:6.95rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0px 0.08rem 0.38rem 0px rgba(80,81,233,0.1);
+			border-radius:0.09rem;
+			margin: 0 auto;
+			padding:0.14rem 0;
+		}
+		.integral-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0.1rem 0.2rem;
+		}
+		.item-left {
+			width: 5.2rem;
+			height: 0.94rem;
+		}
+		.item-left-way {
+			height:0.33rem;
+			font-size:0.26rem;
+			font-family:PingFangSC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			line-height:0.33rem;
+			margin-top: 0.14rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.item-left-date {
+			height:0.28rem;
+			font-size:0.22rem;
+			font-family:PingFangSC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.28rem;
+			margin-top: 0.08rem;
+		}
+		.item-right {
+			height:0.70rem;
+			font-size:0.28rem;
+			font-family:PingFangSC;
+			font-weight:400;
+			color:rgba(255,123,140,1);
+			line-height:0.70rem;
+			text-align: right;
+		}
+		.item-right.colorful {
+			color:rgba(116,59,21,1);
+		}
+		.nav{
+			width:7.5rem;
+			height:0.84rem;
+			background:rgba(246,246,246,1);
+		}
+		.nav_left{
+			width:3.74rem;
+			height:0.84rem;
+			font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFangSC;
+			font-weight:400;
+		    color: rgba(34,34,34,1);
+			line-height: 0.84rem;
+			text-align: center;
+			float: left;
+		}
+		.nav_right{
+			width:3.74rem;
+			height:0.84rem;
+			font-size:0.3rem;
+			font-family:PingFangSC-Regular,PingFangSC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			line-height: 0.84rem;
+			text-align: center;
+			float: right;
+		}
+		.active{
+			background:rgba(255,255,255,1);
+		}
+		.eran{
+			width:6.95rem;
+			height:3.64rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0rem 0.08rem 0.38rem 0rem rgba(80,81,233,0.1);
+			border-radius:0.09rem;
+			margin: 0 auto;
+			margin-top: 0.28rem;
+			overflow: hidden;
+		}
+		.eranItem{
+			width: 6.95rem;
+			height: 33.3%;
+			overflow: hidden;
+			position: relative;
+		}
+		.eranItemTitle{
+			margin-left: 0.22rem;
+			margin-top: 0.21rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFangSC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+		}
+		.eranItemSub{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFangSC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-left: 0.22rem;
+			margin-top: 0.08rem;
+		}
+		.eranQd,.eranDh,.eranFx,.eranGm{
+			width:1.4rem;
+			height:0.5rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background:rgba(116,59,21,1);
+			border-radius:0.27rem;
+			position: absolute;
+			right: 0.21rem;
+			top: 0.33rem;
+			font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFangSC;
+			font-weight:400;
+			color:rgba(255,255,255,1)
+		}
+		.overQd{
+			background-color: rgba(246,246,246,1);
+			color: #222222;
+		}
+		.water{
+			display: none;
+		}
+		.eranText{
+			width: 6.95rem;
+			margin: 0 auto;
+		}
+		.eranText p{
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFangSC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-top: 0.28rem;
+			text-indent: 0.18rem;
+		}
+		.eranText div{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFangSC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			line-height:0.33rem;
+			margin-left: 0.18rem;
+			margin-bottom: 0.14rem;
+		}
+		.shade{
+			width: 100vw;
+			height: 100vh;
+			background:rgba(0,0,0,0.6);
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 120;
+		    display: none;
+		}
+		.shadeImg{
+			width: 4.94rem;
+		    height: 7.72rem;
+		    margin-top: 0.6rem;
+		    margin-left: 1.2rem;
+		}
+		.shadeImg img{
+			width: 4.94rem;
+			height: 7.72rem;
+		}
+		.shareTitle{
+			width:2.8rem;
+			height:0.5rem;
+			font-size:0.36rem;
+			font-family:PingFangSC-Regular,PingFangSC;
+			font-weight:400;
+			color:rgba(205,205,205,1);
+			line-height:0.5rem;
+			text-align: center;
+			margin: 0 auto;
+			margin-top: 0.7rem;
+		}
+		.login-water-06{
+	        position: absolute;
+		    right: 1rem;
+		    bottom: 1.55rem;
+		    width: 0.70rem;
+		    height: 0.70rem;
+		    line-height: 0.70rem;
+		    animation: ghostUpdown1 1.4s infinite 0.25s ease-in-out alternate;
+		    -webkit-animation: ghostUpdown1 1.4s infinite 0.25s ease-in-out alternate;
+		}
+	</style>
+</head>
+<body>
+<div class="login-header">
+	<div class="page-left-icon"><img src="../../../img/mall/icon_arrow_left_white.png"/></div>
+	<div class="page-title">积分</div>
+</div>
+<div class="login-bg">
+	<div class="login-middle">
+		<div class="user-integral">138</div>
+		<div class="user-integral-text">当前积分</div>
+	</div>
+	<!--<div class="login-water login-water-01" type="1">+15</div>
+	<div class="login-water login-water-02" type="2">+5</div>
+	<div class="login-water login-water-03" type="3">+165</div>
+	<div class="login-water login-water-04" type="4">+25</div>
+	<div class="login-water login-water-05" type="5">+9</div>-->
+</div>
+<div class="page-container" style="top: 3.2rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color: #FFFFFF;">
+		<div class="mui-scroll" style="background-color: #FFFFFF;">
+			<div class="nav">
+				<div class="nav_left active">
+					赚积分
+				</div>
+				<div class="nav_right">
+					积分明细
+				</div>
+			</div>
+			<div class="eranBox">
+				<div class="eran">
+					<div class="eranItem">
+						<div class="eranItemTitle">
+							每日签到
+						</div>
+						<div class='eranItemSub qdJf'>
+							签到每天可领取<span></span>积分
+						</div>
+						<div class="eranQd">
+							签到
+						</div>
+					</div>
+					<div class="eranItem">
+						<div class="eranItemTitle">
+							购买商品
+						</div>
+						<div class='eranItemSub'>
+							购买商品可领取相应的积分
+						</div>
+						<div class="eranGm">
+							购买
+						</div>
+					</div>
+					<div class="eranItem">
+						<div class="eranItemTitle">
+							商品评价
+						</div>
+						<div class='eranItemSub'>
+							完成商品评价可获得10积分
+						</div>
+						<div class="eranDh">
+							去评论
+						</div>
+					</div>
+				</div>
+				<div class="eranText">
+					<p>小助手</p>
+					<div>积分可以变钱花</div>
+					<div>1000积分在购买商品时可抵10元</div>
+				</div>
+			</div>
+			
+			<div class="water">
+				<div class="integral-title">积分收支明细</div>
+				<div class="integral-list">
+					<div class="integral-item">
+						<div class="item-left">
+							 <div class="item-left-way">
+							 	订单2566452005655使用余额1000
+							 </div>
+							 <div class="item-left-date">
+							 	2019.12.03  15:55:53
+							 </div>
+						</div>
+						<div class="item-right">
+							-2000
+						</div>
+					</div>
+					<div class="integral-item">
+						<div class="item-left">
+							 <div class="item-left-way">
+							 	购买余额（卡支付05684422）
+							 </div>
+							 <div class="item-left-date">
+							 	2019.12.03  15:55:53
+							 </div>
+						</div>
+						<div class="item-right colorful">
+							+2000
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script>
+var currentPage = 1, totalPage = 1;
+mui.init({
+	pullRefresh : {
+		container: "#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+		indicators: false,
+		deceleration: 0.0006,
+		down: {
+			height: 50,//可选,默认50.触发下拉刷新拖动距离,
+			auto: true,//可选,默认false.首次加载自动下拉刷新一次
+			contentdown: "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+			contentover: "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+			contentrefresh: "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+			callback: pullfresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+		},
+		up : {
+			height: 50,//可选.默认50.触发上拉加载拖动距离
+			auto: false,//可选,默认false.自动上拉加载一次
+			contentrefresh: "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+			contentnomore: "我可是有底线的哦~",//可选，请求完毕若没有更多数据时显示的提醒内容；
+			callback: upPullfresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+		}
+	}
+});
+
+function pullfresh(){
+//	kcallme.ajax({
+//		url:base_url+'/userInfo/pointRecordList.do',
+//		data:{
+//			userId:localStorage.getItem("userId")
+//		},
+//		success:function (data){
+//			$(".integral-list").empty()
+//			$.each(data.data,function (i,n){
+//				var dataF =  new Date(n.create_time).getFullYear()
+//				var dataM =  new Date(n.create_time).getMonth()+1
+//				var dataD =  new Date(n.create_time).getDate()
+//				var dataH = new Date(n.create_time).getHours()
+//				var dataMin = new Date(n.create_time).getMinutes()
+//				var dataS = new Date(n.create_time).getSeconds()
+//				if(dataM < 10){
+//					dataM = '0'+dataM
+//				}
+//				if(dataD < 10){
+//					dataD = '0'+dataD
+//				}
+//				if(dataH < 10){
+//					dataH = '0'+dataH
+//				}
+//				if(dataMin < 10){
+//					dataMin = '0'+dataMin
+//				}
+//				if(dataS < 10){
+//					dataS = '0'+dataS
+//				}
+//				if(Number(n.value) < 0){
+//					$(".integral-list").append("<div class='integral-item' data-id='"+n.id+"''>"+
+//					"<div class='item-left'>"+
+//						"<div class='item-left-way'>"+n.remark+"使用积分"+n.value+"</div>"+
+//						"<div class='item-left-date'>"+dataF+'.'+dataM+'.'+dataD+'  '+dataH+':'+dataMin+':'+dataS+"</div>"+
+//					"</div>"+
+//					"<div class='item-right'>"+n.value+"</div>"+
+//				"</div>")
+//				}else{
+//					$(".integral-list").append("<div class='integral-item' data-id='"+n.id+"''>"+
+//						"<div class='item-left'>"+
+//							"<div class='item-left-way'>"+n.remark+"收入积分"+n.value+"</div>"+
+//							"<div class='item-left-date'>"+dataF+'.'+dataM+'.'+dataD+'  '+dataH+':'+dataMin+':'+dataS+"</div>"+
+//						"</div>"+
+//						"<div class='item-right colorful'>"+n.value+"</div>"+
+//					"</div>")
+//				}
+//			})
+//		}
+//	})
+	mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+}
+
+function upPullfresh(){
+	mui('#refreshContainer').pullRefresh().endPullupToRefresh(false);
+}
+
+$(".nav div").on("tap",function (){
+	$(this).addClass("active")
+	$(this).siblings().removeClass("active")
+	if($(".nav_left").hasClass("active")){
+		$(".water").hide()
+		$(".eranBox").show()
+	}
+	if($(".nav_right").hasClass("active")){
+		$(".water").show()
+		$(".eranBox").hide()
+	}
+})
+
+//$(".eranQd").on("tap",function (){
+//	if($(this).hasClass("overQd")){
+//		
+//	}else{
+//		kcallme.ajax({
+//			url:base_url+'/balance/signIn.do',
+//			data:{
+//				userId:localStorage.getItem("userId")
+//			},
+//			success:function (data){
+//				console.log(data)
+//				if(data.result==1){
+//					mui.toast('签到成功')
+//					$(".eranQd").addClass("overQd")
+//					$(".eranQd").html('已签到')
+//					kcallme.ajax({
+//						url:base_url+'/userInfo/beforePointRecordList.do',
+//						data:{
+//							userId:localStorage.getItem("userId")
+//						},
+//						success:function (data){
+//							kcallme.hideLoading()
+//							$(".login-water").remove()
+//							$.each(data.data,function (i,n){
+//								
+//								if(i<6){
+//									$(".login-bg").append("<div class='login-water login-water-0"+(i+1)+"' data-id='"+n.id+"' data-type='"+(i+1)+"'>+"+n.value+"</div>")
+//								}
+//								
+//							})
+//							$(".login-water").on("tap",function(){
+//								kcallme.showLoading()
+//								var type = $(this).attr("data-type");
+//								var id = $(this).attr("data-id")
+//								$(this).animate({
+//									"bottom": "1.30rem",
+//									"left": "50%",
+//									"margin-left": "-0.925rem",
+//									"opacity": "0"
+//								},200,function(){
+//									$(this).remove();
+//									setTimeout(function(){
+//										water(type);
+//									},500);
+//								})
+//								kcallme.ajax({
+//									url:base_url+'/userInfo/getPoint.do',
+//									data:{
+//										id:id,
+//										userId:localStorage.getItem('userId')
+//									},
+//									success:function (data){
+//										if(data.result == 1){
+//											mui.toast('积分领取成功')
+//											nowInt()
+//											kcallme.hideLoading()
+//											mui('#refreshContainer').pullRefresh().pulldownLoading();
+//										}
+//									}
+//								})
+//							})
+//						}
+//					})
+//				}else{
+//					mui.toast('签到失败')
+//				}
+//			}
+//		})
+//	}
+//})
+mui.ready(function(){
+//	kcallme.showLoading()
+//	kcallme.ajax({
+//		url:base_url+'/userInfo/beforePointRecordList.do',
+//		data:{
+//			userId:localStorage.getItem("userId")
+//		},
+//		success:function (data){
+//			kcallme.hideLoading()
+//			$.each(data.data,function (i,n){
+//				if(i<6){
+//					$(".login-bg").append("<div class='login-water login-water-0"+(i+1)+"' data-id='"+n.id+"' data-type='"+(i+1)+"'>+"+n.value+"</div>")
+//				}
+//			})
+//			
+//			$(".login-water").on("tap",function(){
+//				kcallme.showLoading()
+//				var type = $(this).attr("data-type");
+//				var id = $(this).attr("data-id")
+//				$(this).animate({
+//					"bottom": "1.30rem",
+//					"left": "50%",
+//					"margin-left": "-0.925rem",
+//					"opacity": "0"
+//				},200,function(){
+//					$(this).remove();
+//					setTimeout(function(){
+//						water(type);
+//					},500);
+//				})
+//				kcallme.ajax({
+//					url:base_url+'/userInfo/getPoint.do',
+//					data:{
+//						id:id,
+//						userId:localStorage.getItem('userId')
+//					},
+//					success:function (data){
+//						if(data.result == 1){
+//							mui.toast('积分领取成功')
+//							nowInt()
+//							kcallme.hideLoading()
+//							mui('#refreshContainer').pullRefresh().pulldownLoading();
+//						}
+//					}
+//				})
+//			})
+//		}
+//	})
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	});
+	$('.shade').on("tap",function (){
+		$('.shade').hide()
+	})
+	$(".page-left-icon").on("tap", function(){
+		mui.back();
+	});
+	$(".eranGm").on("tap",function (){
+		mui.openWindow({
+			id:'self-inter-id',
+			url:'../mall/index.html'
+		})
+	})
+	
+	$(".page-right-icon").on("tap",function(){
+		mui.openWindow({
+			id: 'self-integralExplain',
+			url: './integralExplain.html'
+		});
+	})
+})
+</script>

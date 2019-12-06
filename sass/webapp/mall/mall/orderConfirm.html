@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>叩我网</title>
+    <link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+    <link rel="stylesheet" href="../../../css/mall/animate.css"/>
+    <link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.userMessage{
+			width:6.93rem;
+			height:2.06rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+			overflow: hidden;
+		}
+		.userMessageTop{
+			width: 6.93rem;
+			height: 0.4rem;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.default{
+			width:0.9rem;
+			height:0.4rem;
+			background:rgba(116,59,21,1);
+			border-radius:0.24rem;
+			margin-top: 0.28rem;
+			margin-left: 0.27rem;
+			font-size:0.22rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			text-align: center;
+			line-height: 0.4rem;
+		}
+		.target{
+			width:0.9rem;
+			height:0.4rem;
+			background:rgba(241,209,180,1);
+			border-radius:0.24rem;
+			text-align: center;
+			line-height: 0.4rem;
+			margin-top: 0.28rem;
+			margin-left: 0.1rem;
+			font-size:0.22rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+		}
+		.general{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-top: 0.32rem;
+			margin-left: 0.14rem;
+		}
+		.userAddress{
+			width: 6.93rem;
+		    height: 0.68rem;
+		    display: flex;
+		    flex-flow:  row nowrap;
+  			justify-content: space-between;
+  			line-height: 0.68rem;
+  			margin-top: 0.3rem;
+		}
+		.userAddressText{
+			font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-left: 0.25rem;
+		}
+		.addressRight{
+			width: 0.66rem;
+			height: 0.68rem;
+		}
+		.addressRight img{
+			width: 0.66rem;
+			height: 0.68rem;
+		}
+		.userBottom{
+			width: 6.93rem;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.userName{
+			font-size:0.3rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-left: 0.27rem;
+		}
+		.userMobile{
+			font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			margin-left: 0.24rem;
+			margin-top: 0.04rem;
+		}
+		.payMethod{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+			display: flex;
+			flex-flow:  row nowrap;
+			justify-content: space-between;
+		}
+		.payMethodText{
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-top: 0.2rem;
+			margin-left: 0.27rem;
+		}
+		.payMethodValue{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(112,112,112,1);
+			margin-top: 0.2rem;
+			margin-right: 0.19rem;
+		}
+		.shopp{
+			width:6.93rem;
+			height:3.76rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.22rem;
+			overflow: hidden;
+		}
+		.shoppMain{
+			width:6.93rem;
+			height:1.86rem;
+		    margin-top: 0.24rem;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.shoppImg{
+			width:1.86rem;
+			height:1.86rem;
+			background:rgba(216,216,216,1);
+			border-radius:0.2rem;
+			overflow: hidden;
+			margin-left: 0.27rem;
+		}
+		.shoppImg img{
+			width:1.86rem;
+			height:1.86rem;
+		}
+		.shoppMessage{
+			width: 3rem;
+			margin-left: 0.23rem;
+		}
+		.shoppName{
+			width: 3rem;
+			height: 0.4rem;
+			line-height: 0.4rem;
+			font-size: 0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.shoppSku{
+			height:0.33rem;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-top: 0.41rem;
+		}
+		.shoppPrice{
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(116,59,21,1);
+			margin-top: 0.19rem;
+		}
+		.shoppPrice span{
+			font-size: 0.36rem;
+		}
+		.shoppNum{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-top: 1.39rem;
+			margin-left: 0.85rem;
+		}
+		.priceMessage{
+			width: 6.93rem;
+			display: flex;
+			flex-flow:  row nowrap;
+			justify-content: space-between;
+			margin-top: 0.47rem;
+		}
+		.priceText{
+			height:0.4rem;
+			line-height: 0.4rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-left: 0.25rem;
+		}
+		.priceValue{
+			height:0.4rem;
+			line-height: 0.4rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-right: 0.25rem;
+		}
+		.levMessage{
+			width:6.93rem;
+			height:1rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			display: flex;
+			justify-content: flex-start;
+			margin: 0 auto;
+			margin-top: 0.21rem;
+		}
+		.levMessage div{
+			width:0.6rem;
+			font-size:0.2rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-top: 0.12rem;
+			margin-left: 0.25rem;
+		}
+		.levMessage textarea{
+			font-size: 0.28rem;
+			border: none;
+		    margin-top: -0.1rem;
+		    background-color: transparent;
+		}
+		.mui-scroll-wrapper {
+		    position: absolute;
+		    z-index: 2;
+		    top: 0;
+		    bottom:1.08rem;
+		    left: 0;
+		    overflow: hidden;
+		    width: 100%;
+		}
+		.subFooter{
+			width:7.5rem;
+			height:1.08rem;
+			background:rgba(255,255,255,1);
+			position:fixed;
+			bottom: 0;
+			display: flex;
+			justify-content: flex-end;
+		}
+		.subBtn{
+			width:1.8rem;
+			height:0.6rem;
+			background:rgba(116,59,21,1);
+			border-radius:1rem;
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			line-height: 0.6rem;
+			text-align: center;
+			margin-right: 0.28rem;
+			margin-top: 0.24rem;
+		}
+		.allPrice{
+			font-size:0.26rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-top: 0.32rem;
+			margin-right: 0.41rem;
+		}
+		.allPrice span{
+			font-size: 0.3rem;
+		}
+		.allNum{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-top: 0.37rem;
+			margin-right: 0.30rem;
+		}
+		.points{
+			width:6.93rem;
+			height:0.8rem;
+			background:rgba(255,255,255,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+			display: flex;
+		    flex-flow:  row nowrap;
+		    justify-content: space-between;
+		}
+		.pointsLeft{
+			font-size:0.28rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-top: 0.2rem;
+			margin-left: 0.27rem; 
+		}
+		.pointsLeft span{
+			margin-left: 0.2rem;	
+			font-size:0.24rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(181,181,181,1);
+		}
+		.pointsRight{
+			width: 0.70rem;
+    		height: 0.32rem;
+		    background-image: url(../../../img/mall/icon_self_send_no.png);
+		    background-repeat: no-repeat;
+		    background-position: center;
+		    background-size: 0.70rem 0.32rem;
+		    margin-top: 0.25rem;
+		    margin-right: 0.44rem;
+		}
+		.pointsRight.active{
+			background-image: url(../../../img/mall/icon_self_send.png);	
+		}
+	</style>
+</head>
+<body>
+<div class="page-header"> 
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		确认订单
+	</div>
+</div>
+<div class="page-container" style="top: 0.88rem;">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:#f8f8f8;">
+		<div class="mui-scroll">
+			<div class="userMessage">
+				<div class="userMessageTop">
+					<div class="default">
+						默认
+					</div>
+					<div class="target">
+						家
+					</div>
+					<div class="general">
+						北京市通州区
+					</div>
+				</div>
+				<div class="userAddress">
+					<div class="userAddressText">
+						北京市通州区中上园9号院38号楼3单元1203
+					</div>
+					<div class="addressRight">
+						<img src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+				</div>
+				<div class="userBottom">
+					<div class="userName">
+						高磊
+					</div>
+					<div class="userMobile">
+						15928344584
+					</div>
+				</div>
+			</div>
+			<div class="payMethod">
+				<div class="payMethodText">
+					支付方式
+				</div>
+				<div class="payMethodValue">
+					在线支付
+				</div>
+			</div>
+			<div class="shopp">
+				<div class="shoppMain">
+					<div class="shoppImg">
+						<img src="../../../img/mall/gf.JPG"/>
+					</div>
+					<div class="shoppMessage">
+						<div class="shoppName">
+							北极熊-粉
+						</div>
+						<div class="shoppSku">
+							白色 12cm
+						</div>
+						<div class="shoppPrice">
+							¥<span>299</span>.00
+						</div>
+					</div>
+					<div class="shoppNum">
+						x 6
+					</div>
+				</div>
+				<div class="priceMessage">
+					<div class="priceText">
+						商品金额
+					</div>
+					<div class="priceValue">
+						¥299.00
+					</div>
+				</div>
+				<div class="priceMessage" style="margin-top: 0.14rem;">
+					<div class="priceText">
+						运费
+					</div>
+					<div class="priceValue">
+						¥10.00
+					</div>
+				</div>
+			</div>
+			<div class="levMessage">
+				<div>备注</div>
+				<textarea name="" rows="" cols=""></textarea>
+			</div>
+			<div class="points">
+				<div class="pointsLeft">
+					积分 <span>共514 暂不可用</span>
+				</div>
+				<div class="pointsRight"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="subFooter">
+	<div class="allNum">
+		共6件
+	</div>
+	<div class="allPrice">
+		合计: ¥<span>299</span>.00
+	</div>
+	<div class="subBtn">
+		提交订单
+	</div>
+</div>
+</body>
+</html>
+<script>
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+	$(".pointsRight").on("tap",function (){
+		if($(this).hasClass("active")){
+			$(this).removeClass("active")
+		}else{
+			$(this).addClass("active")
+		}
+	})
+})
+</script>

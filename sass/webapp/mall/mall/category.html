@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>叩我网</title>
+	<link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+    <link rel="stylesheet" href="../../../css/mall/mall.css"/>
+	<link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css"/>
+	<link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css"/>
+	<script type="text/javascript" src="../../../js/mall/ChinesePY.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper.min.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mui.min.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		body{
+			height: 100%;
+			background:rgba(255,255,255,1);	
+		}
+		.page-header{
+			background:white;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+		}
+		.nav_left{
+			width: 2.1rem;
+			/*height: 12.3rem;*/
+			/*height: 92.5vh;*/
+			float: left;
+			/*position: relative;*/
+		    box-shadow: 0.03rem 0.4rem 0.44rem 0rem rgba(80,81,233,0.1);
+		    margin-top:1rem
+		}
+		.nav_item{
+			width: 2.1rem;
+		}
+		.item_header{
+			width: 2.1rem;
+			height:0.8rem;
+		}
+		.item_header_left,.item_header_right{
+			width: 0.4rem;
+			height: 0.8rem;
+			line-height: 0.7rem;
+			color: rgba(178,165,198,1);
+			font-size: 0.2rem;
+			overflow: hidden;		
+		}
+		.item_header_left{
+			float: left;
+			margin-left: 0.1rem;
+		}
+		.item_header_right{
+			float: right;
+			margin-right: 0.1rem;
+		}
+		.item_header_left img{
+			width: 0.4rem;
+			/*height: 0.2rem;*/
+		}
+		.item_header_right img{
+			width: 0.4rem;
+			/*height: 0.2rem;*/
+		}
+		.item_title{
+			width: 1.1rem;
+			height: 0.8rem;
+			float: left;
+			text-align: center;
+			line-height: 0.8rem;
+			font-family:PingFangSC-Regular;
+			font-weight:400;
+			color:rgba(189,189,189,1);
+			font-size: 0.23rem;
+		}
+		.item_main,.item_main_ip{
+			width: 2.1rem;
+			height: 0.8rem;
+			line-height: 0.8rem;
+			text-align: center;
+			font-family:PingFangSC-Regular;
+			font-weight:400;
+		    color: rgba(87, 87, 87, 1);
+			font-size: 0.26rem;
+			/*text-indent: 0.2rem;*/
+		}
+		.item_border{
+			height: 0.24rem;
+			padding-left: 0.24rem;
+			/*border-left: 0.1rem solid red;*/
+		}
+		.main{
+			width:5.4rem;
+			/*background-color:#F0F0F0;*/
+			float: right;
+			margin-top: 1rem;
+			margin-left: 2.1rem;
+		}
+		.main_brand{
+		    width: 4.9rem;
+    		height: 2.46rem;
+			background:rgba(216,216,216,1);
+			border-radius:0.1rem;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.main_brand img{
+			width: 4.9rem;
+			height: 2.46rem;
+		}
+		.main_classify{
+			width: 4.88rem;
+			margin: 0 auto;
+			margin-top:0.12rem;
+		}
+		.main_title{
+			width:4.8rem;
+			height: 0.7rem;
+			text-indent: 0.18rem;
+			font-size: 0.24rem;
+			line-height: 0.7rem;
+			margin: 0 auto;
+			margin-top: 0.2rem;
+		}
+		.main_torger{
+			width: 4.8rem;
+			margin: 0 auto;
+		    display: flex;
+		    justify-content: flex-start;
+		    flex-wrap: wrap;
+	        border-bottom: 0.01rem solid rgba(236,237,255,1);
+    		padding: 0.2rem 0rem;
+		}
+		.main_each,.main_each_ip{
+			width:1.4rem;
+			height: 2.2rem;
+			float: left;
+			margin-left: 0.18rem;
+		}
+		.main_each_img{
+		    width: 1.40rem;
+		    height: 1.40rem;
+		    border-radius: 0.1rem;
+			margin: 0 auto;
+		}
+		.main_each_img img{
+			width: 1.40rem;
+			height: 1.40rem;
+		}
+		.main_each_text{
+			width: 1.40rem;
+			height:0.8rem;
+			line-height: 0.8rem;
+			text-align: center;
+			font-size: 0.24rem;
+			font-family:PingFangSC-Regular;
+			font-weight:400;
+			color:#222222;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.mui-scroll-wrapper {
+		    position: absolute;
+		    z-index: 2;
+		    top: 0;
+		    bottom: 1rem;
+		    left: 0;
+		    overflow: hidden;
+		    /*width: 100%;*/
+		}
+		.tabbar{
+			width:7.5rem;
+			height:0.96rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0rem -0.06rem 0.16rem 0rem rgba(0,0,0,0.06);
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+		    z-index: 9;
+		}
+		.tabbar div{
+			width: 20%;
+			height: 0.96rem;
+			text-align: center;
+		}
+		.tabbar div img{
+			display: block;
+		}
+		.index img{
+			width: 0.39rem;
+			height: 0.36rem;
+			margin: 0 auto;
+			margin-top: 0.16rem;	
+		}
+		.cateify img{
+			width: 0.41rem;
+			height: 0.40rem;
+			margin: 0 auto;
+			margin-top: 0.14rem;
+		}
+		.card img{
+			width: 0.38rem;
+			height: 0.36rem;
+			margin: 0 auto;
+			margin-top: 0.19rem;	
+		}
+		.cart img{
+			width: 0.41rem;
+			height: 0.38rem;
+			margin: 0 auto;
+			margin-top: 0.16rem;
+		}
+		.self img{
+			width: 0.35rem;
+			height: 0.37rem;
+			margin: 0 auto;
+			margin-top: 0.15rem;	
+		}
+		.tabbar span{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.28rem;
+		}
+		.index span{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			line-height:0.28rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-left-icon">
+		<img src="../../../img/mall/icon_back.png"/>
+	</div>
+	<div class="page-title">
+		分类
+	</div>
+	<div class="page-right-icon">
+		<img src="../../../img/mall/icon_search.png"/>
+	</div>
+</div>
+	
+<!--<div class="">-->
+	<div class="nav_left mui-scroll-wrapper">
+	    <div class="mui-scroll">
+		    	<div class="nav_item">
+		    		<div class="item_header">
+		    			<div class="item_header_left">
+		    				<img src="../../../img/mall/border.png?x-oss-process=image/resize,w_200"/>
+		    			</div>
+		    			<div class="item_title">
+		    				IP
+		    			</div>
+		    			<div class="item_header_right">
+		    				<img src="../../../img/mall/border.png?x-oss-process=image/resize,w_200"/>
+		    			</div>
+		    		</div>
+		    		<div class="item_main_ip" data-id="2">
+		    			<span class="item_border">国风</span>
+		    		</div>
+		    		<div class="item_main_ip" data-id="1">
+		    			<span class="item_border">影视</span>
+		    		</div>
+		    		<div class="item_main_ip" data-id="4">
+		    			<span class="item_border">游戏</span>
+		    		</div>
+		    		<div class="item_main_ip" data-id="3">
+		    			<span class="item_border">动漫</span>
+		    		</div>
+		    		
+		    		
+		    	</div>
+		    	<div class="nav_item nav_shopp">
+		    		<div class="item_header">
+		    			<div class="item_header_left">
+		    				<img src="../../../img/mall/border.png?x-oss-process=image/resize,w_200"/>
+		    			</div>
+		    			<div class="item_title">
+		    				生活
+		    			</div>
+		    			<div class="item_header_right">
+		    				<img src="../../../img/mall/border.png?x-oss-process=image/resize,w_200"/>
+		    			</div>
+		    		</div>
+		    		<div class="item_main">
+		    			<span class="item_border" style="border-left: 0.07rem solid rgba(116, 59, 21, 1); color: rgba(34, 34, 34, 1);">箱包收纳</span>
+		    		</div>
+		    	</div>
+		</div>
+	</div>
+<!--</div>-->
+	<div class="main mui-scroll-wrapper">
+		<!--<div class=" ">-->
+		    <div class="mui-scroll">
+				<div class="main_brand">
+					<img src="../../../img/mall/cate-banner.PNG?x-oss-process=image/resize,w_200"/>
+				</div>
+				<div class="main_classify">
+					<div class="main_title" style="color: rgba(87, 87, 87, 1);">
+						品牌
+					</div>
+					<div class="main_torger">
+						<div class="main_each">
+							<div class="main_each_img">
+								<img src="http://kcallme-mall.oss-cn-beijing.aliyuncs.com/images/d1905d082f5f40c18942b451a5193a5d.png?x-oss-process=image/resize,w_200"/>
+								<div class="main_each_text">
+									摇铃/床铃
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--</div>-->
+	</div>
+<div class="tabbar">
+	<div class="index">
+		<img src="../../../img/mall/index-over.png"/>
+		<span>首页</span>
+	</div>
+	<div class="cateify">
+		<img src="../../../img/mall/cateify.png"/>
+		<span>分类</span>
+	</div>
+	<div class="card">
+		<img src="../../../img/mall/card.png"/>
+		<span>卡券</span>
+	</div>
+	<div class="cart">
+		<img src="../../../img/mall/cart.png"/>
+		<span>购物车</span>
+	</div>
+	<div class="self">
+		<img src="../../../img/mall/self.png"/>
+		<span>我的</span>
+	</div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+mui.init()
+mui.ready(function (){
+	var options = mui('.mui-scroll-wrapper')
+	options.scroll({
+		 deceleration:0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+		 scrollY:true,
+		 scrollX: false, //是否横向滚动
+		 startX: 0, //初始化时滚动至x
+		 startY: 0, //初始化时滚动至y
+		 indicators: false, //是否显示滚动条
+		 bounce: true
+	});
+	$('.page-left-icon').click(function (){
+		mui.back()
+	})
+	$(".index").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./index.html'
+		})
+	})
+	$(".card").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./card.html'
+		})
+	})
+	$(".cart").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./cart.html'
+		})
+	})
+	$(".self").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'../self/index.html'
+		})
+	})
+})
+</script>

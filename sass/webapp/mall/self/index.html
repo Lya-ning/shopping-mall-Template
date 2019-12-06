@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="apple-mobile-web-app-capable" content="yes">  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+	<title>叩我网</title>
+	<link rel="stylesheet" href="../../../css/mall/mui.min.css"/>
+	<link rel="stylesheet" href="../../../css/mall/mall.css"/>
+	<link rel="stylesheet" href="../../../css/mall/animate.css"/>
+	<link rel="stylesheet" href="../../../js/mall/swiper/swiper.min.css" rel="stylesheet"/>
+	<script type="text/javascript" src="../../../js/mall/mui.js"></script>
+	<script type="text/javascript" src="../../../js/mall/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../../js/mall/mall.js"></script>
+	<script type="text/javascript" src="../../../js/mall/swiper/swiper4.min.js"></script>
+	<script>
+	    document.documentElement.style.fontSize = document.documentElement.clientWidth/375*50+'px'
+	</script>
+	<style>
+		.page-header{
+			background:transparent;
+		}
+		.page-header .page-left-icon img{
+		    position: absolute;
+		    top: 0;
+		    width: 0.24rem;
+		    height: 0.42rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-right-icon img {
+			position: absolute;
+		    top: 0;
+		    width: 0.36rem;
+		    height: 0.35rem;
+		    margin: 0.25rem;
+		}
+		.page-header .page-title {
+    		position: absolute;
+		    top: 0.15rem;
+		    left: 0.9rem;
+		    right: 0.9rem;
+		    height: 0.58rem;
+		    border-radius: 0.29rem;
+		    line-height: 0.6rem;
+		    font-size: 0.32rem;
+		    text-align: center;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(255,255,255,1);
+		}
+		.selfMessage{
+			width: 7.5rem;
+			height: 3.68rem;
+			background-image: url(../../../img/mall/icon_selfIndex.png);
+			background-size: 100%;
+		}
+		.page-container{
+			top: 0;
+		}
+		.userMessage{
+			position: absolute;
+			left: 0.5rem;
+			top: 1.21rem;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.userPhoto{
+			width: 1.32rem;
+			height: 1.32rem;
+			border-radius: 50%;
+			overflow: hidden;
+			float: left;
+		}
+		.userPhoto img{
+			width: 1.32rem;
+			height: 1.32rem;
+		}
+		.userName{
+			font-size:0.32rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			margin-left: 0.37rem;
+			margin-top: 0.2rem;
+		}
+		.userMobile{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			margin-left: 0.37rem;
+			margin-top: 0.12rem;
+		}
+		.order{
+			width:6.9rem;
+			height:2.39rem;
+			position: relative;		
+		}
+		.orderMain{
+			width:6.9rem;
+			height:2.39rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0rem 0.13rem 0.48rem -0.11rem rgba(131,131,131,0.2);
+			border-radius:0.2rem;
+			position: absolute;
+			left: 0.3rem;
+		    top: -0.66rem;
+		}
+		.orderTopTitle{
+			float: left;
+			font-size:0.3rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-left: 0.41rem;
+			margin-top: 0.24rem;
+		}
+		.orderTopRight{
+			float: right;
+			display: flex;
+			justify-content: flex-start;
+		}
+		.orderTopRightText{
+			font-size:0.28rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			margin-top: 0.24rem;
+		}
+		.orderTopRightImg{
+			width: 0.66rem;
+			height: 0.68rem;
+			margin-top: 0.1rem;
+		}
+		.orderList{
+			width: 6.9rem;
+			display: flex;
+			justify-content: center;
+			margin-top: 0.94rem;
+		}
+		.orderList>div{
+			width: 20%;
+			text-align: center;
+		}
+		.orderList div img{
+			width: 0.69rem;
+			height: 0.69rem;
+		}
+		.orderTitle{
+			width: 100%;
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+		}
+		.myMoneyTopTitle{
+			font-size:0.3rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-top: -0.26rem;
+			margin-left: 0.29rem;
+		}
+		.moneyList{
+			width:6.8rem;
+			height:1.6rem;
+			background:rgba(248,248,248,1);
+			border-radius:0.2rem;
+			margin: 0 auto;
+			margin-top: 0.19rem;
+			display: flex;
+			justify-content: center;
+		}
+		.moneyList>div{
+			width: 25%;
+			text-align: center;
+		}
+		.pointsNum,.remainNum,.couponNum,.vipCardNum{
+			font-size:0.36rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			margin-top: 0.3rem;
+		}
+		.pointsTitle,.remainTitle,.couponTitle,.vipCardTitle{
+			font-size:0.24rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(87,87,87,1);
+			margin-top: 0.13rem;
+		}
+		.itemList{
+			width: 6.9rem;
+			margin: 0 auto;
+		}
+		.favor,.address,.photo,.history{
+			width: 6.9rem;
+		    height: 0.68rem;
+		    line-height: 0.68rem;
+		    margin-top:0.27rem;
+		}
+		.favorLeft,.addressLeft,.photoLeft,.historyLeft{
+			font-size:0.3rem;
+			font-family:PingFangSC-Medium,PingFang SC;
+			font-weight:500;
+			color:rgba(87,87,87,1);
+			float: left;
+		}
+		.itemRight{
+			float: right;
+			width: 0.66rem;
+    		height: 0.68rem;
+		}
+		.login{
+			width:6.94rem;
+			height:0.8rem;
+			background:rgba(116,59,21,1);
+			border-radius:0.4rem;
+			margin: 0 auto;
+			margin-top: 0.78rem;
+			font-size:0.32rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			text-align: center;
+			line-height: 0.8rem;
+		}
+		.tabbar{
+			width:7.5rem;
+			height:0.96rem;
+			background:rgba(255,255,255,1);
+			box-shadow:0rem -0.06rem 0.16rem 0rem rgba(0,0,0,0.06);
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+		    z-index: 9;
+		}
+		.tabbar div{
+			width: 20%;
+			height: 0.96rem;
+			text-align: center;
+		}
+		.tabbar div img{
+			display: block;
+		}
+		.index img{
+			width: 0.39rem;
+			height: 0.36rem;
+			margin: 0 auto;
+			margin-top: 0.16rem;	
+		}
+		.cateify img{
+			width: 0.41rem;
+			height: 0.40rem;
+			margin: 0 auto;
+			margin-top: 0.14rem;
+		}
+		.card img{
+			width: 0.38rem;
+			height: 0.36rem;
+			margin: 0 auto;
+			margin-top: 0.19rem;	
+		}
+		.cart img{
+			width: 0.41rem;
+			height: 0.38rem;
+			margin: 0 auto;
+			margin-top: 0.16rem;
+		}
+		.self img{
+			width: 0.35rem;
+			height: 0.37rem;
+			margin: 0 auto;
+			margin-top: 0.15rem;	
+		}
+		.tabbar span{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(181,181,181,1);
+			line-height:0.28rem;
+		}
+		.index span{
+			font-size:0.2rem;
+			font-family:PingFangSC-Regular,PingFang SC;
+			font-weight:400;
+			color:rgba(116,59,21,1);
+			line-height:0.28rem;
+		}
+	</style>
+</head>
+<body>
+<div class="page-header">
+	<div class="page-title">
+		我的
+	</div>
+	<div class="page-right-icon">
+		设置
+	</div>
+</div>
+<div class="page-container" style="">
+	<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="background-color:white;">
+		<div class="mui-scroll">
+			<div class="selfMessage">
+				<div class="userMessage">
+					<div class="userPhoto">
+						<img src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngc99e29a36be173f46a224f6a189140124ccfc19c824d41beb1c82e0197269f00"/>
+					</div>
+					<div class="userMain">
+						<div class="userName">
+							秃总
+						</div>
+						<div class="userMobile">
+							13522480602
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order">
+				<div class="orderMain">
+					<div class="orderTopTitle">
+						我的订单
+					</div>
+					<div class="orderTopRight">
+						<div class="orderTopRightText">
+							查看全部订单
+						</div>
+						<img class="orderTopRightImg" src="../../../img/mall/icon_detail_arrow_right.png"/>
+					</div>
+					<div class="orderList">
+						<div class="orderPay">
+							<img src="../../../img/mall/icon_selfPay.png"/>
+							<div class="orderTitle">
+								待支付
+							</div>
+						</div>
+						<div class="orderGoods">
+							<img src="../../../img/mall/icon_selfGoods.png"/>
+							<div class="orderTitle">
+								待收货
+							</div>
+						</div>
+						<div class="orderContent">
+							<img src="../../../img/mall/icon_slefContent.png"/>
+							<div class="orderTitle">
+								待评价
+							</div>
+						</div>
+						<div class="orderOver">
+							<img src="../../../img/mall/icon_selfOver.png"/>
+							<div class="orderTitle">
+								已完成
+							</div>
+						</div>
+						<div class="orderRefund">
+							<img src="../../../img/mall/icon_selfRefund.png"/>
+							<div class="orderTitle">
+								退款/售后
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="myMoneyTopTitle">
+				我的资产
+			</div>
+			<div class="moneyList">
+				<div class="points">
+					<div class="pointsNum">
+						1655
+					</div>
+					<div class="pointsTitle">
+						积分
+					</div>
+				</div>
+				<div class="remain">
+					<div class="remainNum">
+						1685
+					</div>
+					<div class="remainTitle">
+						余额
+					</div>
+				</div>
+				<div class="coupon">
+					<div class="couponNum">
+						3
+					</div>
+					<div class="couponTitle">
+						优惠券
+					</div>
+				</div>
+				<div class="vipCard">
+					<div class="vipCardNum">
+						5
+					</div>
+					<div class="vipCardTitle">
+						会员卡
+					</div>
+				</div>
+			</div>
+			<div class="itemList">
+				<div class="favor">
+					<div class="favorLeft">
+						收藏
+					</div>
+					<img class="itemRight" src="../../../img/mall/icon_detail_arrow_right.png"/>
+				</div>
+				<div class="address">
+					<div class="addressLeft">
+						地址管理
+					</div>
+					<img class="itemRight" src="../../../img/mall/icon_detail_arrow_right.png"/>
+				</div>
+				<div class="history">
+					<div class="historyLeft">
+						历史记录
+					</div>
+					<img class="itemRight" src="../../../img/mall/icon_detail_arrow_right.png"/>
+				</div>
+				<div class="photo">
+					<div class="photoLeft">
+						联系我们
+					</div>
+					<img class="itemRight" src="../../../img/mall/icon_detail_arrow_right.png"/>
+				</div>
+			</div>
+			<div class="login">
+				退出登录
+			</div>
+		</div>
+	</div>
+</div>
+<div class="tabbar">
+	<div class="index">
+		<img src="../../../img/mall/index-over.png"/>
+		<span>首页</span>
+	</div>
+	<div class="cateify">
+		<img src="../../../img/mall/cateify.png"/>
+		<span>分类</span>
+	</div>
+	<div class="card">
+		<img src="../../../img/mall/card.png"/>
+		<span>卡券</span>
+	</div>
+	<div class="cart">
+		<img src="../../../img/mall/cart.png"/>
+		<span>购物车</span>
+	</div>
+	<div class="self">
+		<img src="../../../img/mall/self.png"/>
+		<span>我的</span>
+	</div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+mui.init();
+mui.ready(function (){
+	mui('#refreshContainer').scroll({
+		deceleration: 0.0005,
+		indicators: false
+	}); 
+	mui('.mui-scroll-wrapper').scroll({
+	 deceleration: 0.0006, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	 scrollY:false,
+	 scrollX: true, //是否横向滚动
+	 startX: 0, //初始化时滚动至x
+	 startY: 0, //初始化时滚动至y
+	 indicators: true, //是否显示滚动条
+	 bounce: true //弹力效果
+	});
+	$(".page-left-icon").on("tap",function (){
+		mui.back()
+	})
+	$(".userMessage").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./selfMessage.html'
+		})
+	})
+	$(".orderPay,.orderGoods,.orderContent,.orderOver").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./orders.html'
+		})
+	})
+	$(".orderRefund").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./refund.html'
+		})
+	})
+	$(".page-right-icon").on("tap",function (){
+		mui.openWindow({
+			id:'slef-id',
+			url:'./setting.html'
+		})
+	})
+	$(".history").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./history.html'
+		})
+	})
+	$(".orderTopRight").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./orders.html'
+		})
+	})
+	$(".points").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./points.html'
+		})
+	})
+	$(".favor").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'./favor.html'
+		})
+	})
+	$(".index").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'../mall/index.html'
+		})
+	})
+	$(".cateify").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'../mall/category.html'
+		})
+	})
+	$(".card").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'../mall/card.html'
+		})
+	})
+	$(".cart").on("tap",function (){
+		mui.openWindow({
+			id:'cate-id',
+			url:'../mall/cart.html'
+		})
+	})
+})
+</script>
